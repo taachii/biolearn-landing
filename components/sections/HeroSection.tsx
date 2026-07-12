@@ -10,9 +10,9 @@
  * Below → full-width stats grid (animated stagger on scroll)
  */
 
-import { ArrowRight, TrendingUp, Clock, Target, Award, User, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, TrendingUp, Clock, Target, Award, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { cn } from "@/lib/utils";
 
@@ -48,13 +48,6 @@ const STATS = [
   },
 ] as const;
 
-/* ── Transformation steps ─────────────────────────────────── */
-const TRANSFORMATION = [
-  { label: "Inżynier IT",               color: "text-[var(--color-text-secondary)]" },
-  { label: "9 mies. intensywnej nauki", color: "text-[var(--color-cyan)]"           },
-  { label: "90% · 100. centyl",         color: "text-neon-green"                    },
-] as const;
-
 /* ── Component ────────────────────────────────────────────── */
 export function HeroSection() {
   return (
@@ -63,8 +56,9 @@ export function HeroSection() {
       aria-labelledby="hero-heading"
       className="relative min-h-dvh flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 pb-20"
     >
-      {/* ── Backgrounds ──────────────────────────────────── */}
-      <div aria-hidden="true" className="absolute inset-0 bg-grid opacity-40" />
+      {/* ── Backgrounds ────────────────────────────────────── */}
+      {/* Dot pattern — like a cell culture / microscopy view */}
+      <div aria-hidden="true" className="absolute inset-0 bg-dots opacity-70" />
       <div
         aria-hidden="true"
         className="absolute inset-0"
@@ -73,6 +67,32 @@ export function HeroSection() {
             "radial-gradient(ellipse 90% 60% at 60% -5%, rgba(0,230,118,0.09) 0%, transparent 65%)",
         }}
       />
+
+      {/* ── Biology decoration: hex outlines ──────────────── */}
+      <svg
+        aria-hidden="true"
+        className="hex-deco"
+        style={{ width: 420, height: 420, top: -80, right: "-5%", opacity: 0.5 }}
+        viewBox="0 0 420 420"
+      >
+        <polygon points="210,10 390,110 390,310 210,410 30,310 30,110" />
+      </svg>
+      <svg
+        aria-hidden="true"
+        className="hex-deco"
+        style={{ width: 260, height: 260, bottom: 60, left: "2%", opacity: 0.3 }}
+        viewBox="0 0 260 260"
+      >
+        <polygon points="130,6 241,68 241,192 130,254 19,192 19,68" />
+      </svg>
+      <svg
+        aria-hidden="true"
+        className="hex-deco"
+        style={{ width: 140, height: 140, top: "30%", right: "38%", opacity: 0.2 }}
+        viewBox="0 0 140 140"
+      >
+        <polygon points="70,4 129,37 129,103 70,136 11,103 11,37" />
+      </svg>
 
       {/* Glow orbs */}
       <div aria-hidden="true" className="glow-orb-green" style={{ width: 700, height: 700, top: -300, right: "-5%" }} />
@@ -85,32 +105,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-center">
 
           {/* ══ LEFT: Content ════════════════════════════════ */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 order-2 lg:order-1">
-
-            {/* Badge */}
-            <AnimateIn animation="fade-up" delay={0}>
-              <Badge variant="accent">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
-                100. centyl · 90% z biologii rozszerzonej
-              </Badge>
-            </AnimateIn>
-
-            {/* Transformation path */}
-            <AnimateIn animation="fade-up" delay={80}>
-              <div
-                aria-label="Od Inżyniera IT do 90% z biologii"
-                className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-sm font-medium"
-              >
-                {TRANSFORMATION.map(({ label, color }, i) => (
-                  <span key={label} className="flex items-center gap-2">
-                    <span className={cn("font-semibold", color)}>{label}</span>
-                    {i < TRANSFORMATION.length - 1 && (
-                      <ArrowRight size={13} className="text-[var(--color-text-muted)] shrink-0" aria-hidden="true" />
-                    )}
-                  </span>
-                ))}
-              </div>
-            </AnimateIn>
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
 
             {/* H1 */}
             <AnimateIn animation="fade-up" delay={160}>
@@ -145,8 +140,8 @@ export function HeroSection() {
               </p>
             </AnimateIn>
 
-            {/* CTAs */}
-            <AnimateIn animation="fade-up" delay={320}>
+            {/* CTAs — desktop only (mobile version is below photo) */}
+            <AnimateIn animation="fade-up" delay={320} className="hidden lg:block w-full">
               <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
                 <Button
                   id="hero-cta-primary"
@@ -172,8 +167,8 @@ export function HeroSection() {
               </div>
             </AnimateIn>
 
-            {/* Social proof */}
-            <AnimateIn animation="fade-in" delay={420}>
+            {/* Social proof — desktop only */}
+            <AnimateIn animation="fade-in" delay={420} className="hidden lg:flex">
               <p className="text-xs text-[var(--color-text-muted)] flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-5 h-px bg-[var(--color-border)]" />
                 Wynik potwierdzony świadectwem maturalnym
@@ -186,53 +181,41 @@ export function HeroSection() {
           <AnimateIn
             animation="fade-left"
             delay={200}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[360px] lg:max-w-none">
+            <div className="relative w-full max-w-[260px] sm:max-w-[300px] lg:max-w-none">
 
               {/* Main photo card */}
               <div
                 className={cn(
                   "relative aspect-[3/4] w-full rounded-[var(--radius-2xl)] overflow-hidden",
-                  "bg-[var(--color-bg-card)] border border-[var(--color-border)]",
-                  "shadow-[var(--shadow-card)]"
+                  "border border-[var(--color-border)]",
+                  "shadow-[var(--shadow-card)] bg-[var(--color-bg-card)]"
                 )}
               >
-                {/* Background grid */}
-                <div className="absolute inset-0 bg-grid opacity-25" />
+                {/* Photo */}
+                <Image
+                  src="/images/adam.png"
+                  alt="Adam — Korepetytor Biologii"
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 260px, (max-width: 1024px) 300px, 420px"
+                />
 
-                {/* Subtle gradient overlay */}
+                {/* Bottom gradient — blends photo into dark background */}
                 <div
-                  className="absolute inset-0"
+                  aria-hidden="true"
+                  className="absolute bottom-0 left-0 right-0 h-2/5 pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(ellipse 80% 60% at 50% 30%, rgba(0,230,118,0.06) 0%, transparent 70%)",
+                      "linear-gradient(to top, var(--color-bg-base) 0%, transparent 100%)",
                   }}
                 />
 
                 {/* Corner accents */}
-                <span aria-hidden="true" className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[var(--color-accent)] rounded-tl-lg opacity-70" />
-                <span aria-hidden="true" className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-[var(--color-accent)] rounded-tr-lg opacity-70" />
-                <span aria-hidden="true" className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-[var(--color-border)] rounded-bl-lg opacity-50" />
-                <span aria-hidden="true" className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[var(--color-border)] rounded-br-lg opacity-50" />
-
-                {/* Center placeholder content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8">
-                  <div
-                    className={cn(
-                      "flex items-center justify-center w-24 h-24 rounded-full",
-                      "border-2 border-dashed border-[var(--color-border)]",
-                      "bg-[var(--color-bg-elevated)]",
-                      "text-[var(--color-text-muted)]"
-                    )}
-                  >
-                    <User size={40} strokeWidth={1.2} />
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-[var(--color-text-secondary)]">Adam</p>
-                    <p className="text-xs text-[var(--color-text-muted)] mt-0.5">Miejsce na Twoje zdjęcie</p>
-                  </div>
-                </div>
+                <span aria-hidden="true" className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-[var(--color-accent)] rounded-tl-lg opacity-80 z-10" />
+                <span aria-hidden="true" className="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-[var(--color-accent)] rounded-tr-lg opacity-80 z-10" />
               </div>
 
               {/* ── Floating stat: 90% ──────────────────────── */}
@@ -278,6 +261,38 @@ export function HeroSection() {
             </div>
           </AnimateIn>
         </div>
+
+        {/* ── Mobile CTAs + Social proof — below photo, hidden on desktop ── */}
+        <AnimateIn animation="fade-up" delay={300} className="flex flex-col items-center gap-4 lg:hidden">
+          <div className="flex flex-col gap-3 w-full">
+            <Button
+              id="hero-cta-primary-mobile"
+              size="lg"
+              variant="primary"
+              onClick={() =>
+                document.getElementById("rezerwacja")?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Zapisz się na pierwszą lekcję
+              <ArrowRight size={18} aria-hidden="true" />
+            </Button>
+            <Button
+              id="hero-cta-secondary-mobile"
+              size="lg"
+              variant="secondary"
+              onClick={() =>
+                document.getElementById("historia")?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Poznaj moją historię
+            </Button>
+          </div>
+          <p className="text-xs text-[var(--color-text-muted)] flex items-center gap-2">
+            <span aria-hidden="true" className="inline-block w-5 h-px bg-[var(--color-border)]" />
+            Wynik potwierdzony świadectwem maturalnym
+            <span aria-hidden="true" className="inline-block w-5 h-px bg-[var(--color-border)]" />
+          </p>
+        </AnimateIn>
 
         {/* ── Stats grid — full width ──────────────────────── */}
         <dl

@@ -1,29 +1,53 @@
 @import "tailwindcss";
 
 /* ============================================================
-   DESIGN TOKENS — Premium Tech-Medical / Dark Mode
+   DESIGN TOKENS — Premium Bio-Medical
+   Dark mode by default. Light mode via `.light` on <html>.
    ============================================================ */
 
 @theme inline {
-  /* --- Palette --- */
-  --color-bg-base:       #050c15;
-  --color-bg-surface:    #0b1728;
-  --color-bg-elevated:   #112035;
-  --color-bg-card:       #0f1e32;
+  --font-sans:    var(--font-inter);
+  --font-display: var(--font-outfit);
+  --font-mono:    var(--font-geist-mono);
 
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  20px;
+  --radius-2xl: 32px;
+
+  --duration-fast:   150ms;
+  --duration-normal: 250ms;
+  --duration-slow:   420ms;
+  --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   DARK MODE (default — :root)
+   ============================================================ */
+:root {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --color-bg-base:     #050c15;
+  --color-bg-surface:  #0b1728;
+  --color-bg-elevated: #112035;
+  --color-bg-card:     #0f1e32;
+
+  /* Borders */
   --color-border:        #1a3050;
   --color-border-subtle: #0f2240;
 
-  /* Neon Bio-Green (primary accent) */
-  --color-accent:        #00e676;
-  --color-accent-dim:    #00c45f;
-  --color-accent-muted:  rgba(0, 230, 118, 0.10);
-  --color-accent-glow:   rgba(0, 230, 118, 0.25);
+  /* Accent — Neon Bio-Green */
+  --color-accent:       #00e676;
+  --color-accent-dim:   #00c45f;
+  --color-accent-muted: rgba(0, 230, 118, 0.10);
+  --color-accent-glow:  rgba(0, 230, 118, 0.25);
 
-  /* Neon Cyan (secondary accent — "tech") */
-  --color-cyan:          #00cfff;
-  --color-cyan-muted:    rgba(0, 207, 255, 0.10);
-  --color-cyan-glow:     rgba(0, 207, 255, 0.20);
+  /* Secondary — Neon Cyan (tech) */
+  --color-cyan:       #00cfff;
+  --color-cyan-muted: rgba(0, 207, 255, 0.10);
+  --color-cyan-glow:  rgba(0, 207, 255, 0.20);
 
   /* Text */
   --color-text-primary:   #eef4fb;
@@ -35,43 +59,73 @@
   --color-warning: #ffbb00;
   --color-error:   #ff4466;
 
-  /* --- Typography --- */
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-outfit);
-  --font-mono: var(--font-geist-mono);
-
-  /* --- Radii --- */
-  --radius-sm:  4px;
-  --radius-md:  8px;
-  --radius-lg:  12px;
-  --radius-xl:  20px;
-  --radius-2xl: 32px;
-
-  /* --- Shadows & Glows --- */
+  /* Shadows */
   --shadow-card:        0 4px 24px rgba(0, 0, 0, 0.4);
   --shadow-glow-accent: 0 0 24px rgba(0, 230, 118, 0.30);
   --shadow-glow-cyan:   0 0 24px rgba(0, 207, 255, 0.25);
 
-  /* --- Animation --- */
-  --duration-fast:   150ms;
-  --duration-normal: 250ms;
-  --duration-slow:   400ms;
-  --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  /* Dot pattern color */
+  --dot-color: rgba(26, 48, 80, 0.90);
+  --hex-stroke: rgba(0, 230, 118, 0.08);
+}
+
+/* ============================================================
+   LIGHT MODE — .light on <html>
+   Medical / Nature palette: light mint backgrounds, dark greens
+   ============================================================ */
+.light {
+  color-scheme: light;
+
+  /* Backgrounds */
+  --color-bg-base:     #f2f9f5;
+  --color-bg-surface:  #ffffff;
+  --color-bg-elevated: #e6f4ec;
+  --color-bg-card:     #ffffff;
+
+  /* Borders */
+  --color-border:        #b8d9c4;
+  --color-border-subtle: #d4ecdc;
+
+  /* Accent — deeper green for legibility on light */
+  --color-accent:       #00934e;
+  --color-accent-dim:   #007a40;
+  --color-accent-muted: rgba(0, 147, 78, 0.10);
+  --color-accent-glow:  rgba(0, 147, 78, 0.18);
+
+  /* Secondary */
+  --color-cyan:       #0098b8;
+  --color-cyan-muted: rgba(0, 152, 184, 0.10);
+  --color-cyan-glow:  rgba(0, 152, 184, 0.18);
+
+  /* Text */
+  --color-text-primary:   #0a1f14;
+  --color-text-secondary: #2d6645;
+  --color-text-muted:     #7aaa8e;
+
+  /* Semantic */
+  --color-success: #00934e;
+  --color-warning: #c47a00;
+  --color-error:   #cc2244;
+
+  /* Shadows */
+  --shadow-card:        0 4px 24px rgba(0, 80, 40, 0.08);
+  --shadow-glow-accent: 0 0 20px rgba(0, 147, 78, 0.20);
+  --shadow-glow-cyan:   0 0 20px rgba(0, 152, 184, 0.18);
+
+  /* Pattern colors */
+  --dot-color:  rgba(0, 120, 60, 0.18);
+  --hex-stroke: rgba(0, 147, 78, 0.10);
 }
 
 /* ============================================================
    BASE RESET & GLOBALS
    ============================================================ */
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -80,54 +134,55 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   min-height: 100dvh;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.2s ease;
 }
 
-/* ============================================================
-   SELECTION COLOUR
-   ============================================================ */
 ::selection {
-  background-color: rgba(0, 230, 118, 0.25);
+  background-color: var(--color-accent-muted);
   color: var(--color-text-primary);
 }
 
 /* ============================================================
    SCROLLBAR
    ============================================================ */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-bg-base);
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-base); }
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: 999px;
+  transition: background 0.2s;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-dim);
-}
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent-dim); }
 
 /* ============================================================
-   UTILITY CLASSES (design-system primitives)
+   UTILITY CLASSES
    ============================================================ */
 
 /* Glass surface */
 .glass {
-  background: rgba(11, 23, 40, 0.70);
+  background: rgba(11, 23, 40, 0.72);
   backdrop-filter: blur(16px) saturate(1.5);
   -webkit-backdrop-filter: blur(16px) saturate(1.5);
   border: 1px solid var(--color-border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.light .glass {
+  background: rgba(255, 255, 255, 0.82);
 }
 
-/* Neon text */
+/* Neon text — dark only */
 .text-neon-green {
   color: var(--color-accent);
-  text-shadow: 0 0 20px rgba(0, 230, 118, 0.50);
+  text-shadow: 0 0 20px rgba(0, 230, 118, 0.45);
 }
 .text-neon-cyan {
   color: var(--color-cyan);
-  text-shadow: 0 0 20px rgba(0, 207, 255, 0.50);
+  text-shadow: 0 0 20px rgba(0, 207, 255, 0.45);
+}
+/* Remove glow in light mode */
+.light .text-neon-green,
+.light .text-neon-cyan {
+  text-shadow: none;
 }
 
 /* Gradient text */
@@ -138,26 +193,25 @@ body {
   background-clip: text;
 }
 
-/* Ambient background grid */
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(26, 48, 80, 0.4) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26, 48, 80, 0.4) 1px, transparent 1px);
-  background-size: 40px 40px;
+/* ── Biology patterns ─────────────────────────────────────── */
+
+/* Dot grid — looks like cell culture / microscopy */
+.bg-dots {
+  background-image: radial-gradient(
+    circle,
+    var(--dot-color) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 28px 28px;
 }
 
-/* Glow orbs (decorative) */
-.glow-orb-green {
+/* Decorative hex shape (border only, large) */
+.hex-deco {
   position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 230, 118, 0.18) 0%, transparent 70%);
   pointer-events: none;
-}
-.glow-orb-cyan {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 207, 255, 0.14) 0%, transparent 70%);
-  pointer-events: none;
+  stroke: var(--hex-stroke);
+  stroke-width: 1.5;
+  fill: none;
 }
 
 /* Focus ring */
@@ -168,9 +222,7 @@ body {
 }
 
 /* Animated underline */
-.animated-underline {
-  position: relative;
-}
+.animated-underline { position: relative; }
 .animated-underline::after {
   content: '';
   position: absolute;
@@ -182,16 +234,31 @@ body {
   border-radius: 999px;
   transition: width var(--duration-normal) var(--ease-out-expo);
 }
-.animated-underline:hover::after {
-  width: 100%;
+.animated-underline:hover::after { width: 100%; }
+
+/* Glow orbs */
+.glow-orb-green {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 230, 118, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.glow-orb-cyan {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 207, 255, 0.09) 0%, transparent 70%);
+  pointer-events: none;
+}
+.light .glow-orb-green {
+  background: radial-gradient(circle, rgba(0, 147, 78, 0.08) 0%, transparent 70%);
+}
+.light .glow-orb-cyan {
+  background: radial-gradient(circle, rgba(0, 152, 184, 0.07) 0%, transparent 70%);
 }
 
 /* ============================================================
-   SCROLL ANIMATIONS (CSS-only, no library needed)
-   AnimateIn component toggles `.in-view` class via
-   IntersectionObserver.
+   SCROLL ANIMATIONS
    ============================================================ */
-
 [data-animate] {
   transition:
     opacity  0.55s cubic-bezier(0.16, 1, 0.3, 1),
@@ -199,20 +266,17 @@ body {
   will-change: opacity, transform;
 }
 
-/* Initial (hidden) states */
 [data-animate="fade-up"]    { opacity: 0; transform: translateY(28px); }
 [data-animate="fade-in"]    { opacity: 0; }
 [data-animate="fade-left"]  { opacity: 0; transform: translateX(-28px); }
 [data-animate="fade-right"] { opacity: 0; transform: translateX(28px);  }
 [data-animate="zoom-in"]    { opacity: 0; transform: scale(0.94);       }
 
-/* Visible state — toggled by AnimateIn component */
 [data-animate].in-view {
   opacity: 1;
   transform: translate(0, 0) scale(1);
 }
 
-/* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   [data-animate],
   [data-animate].in-view {

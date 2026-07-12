@@ -13,6 +13,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Menu, X, Dna } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 /* ── Nav links ──────────────────────────────────────────── */
@@ -168,7 +169,8 @@ export function Navbar() {
           </ul>
 
           {/* ── Desktop CTA ────────────────────────────────── */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2">
+            <ThemeToggle />
             <Button
               size="md"
               variant="primary"
@@ -183,23 +185,26 @@ export function Navbar() {
           </div>
 
           {/* ── Mobile hamburger ───────────────────────────── */}
-          <button
-            id="mobile-menu-toggle"
-            type="button"
-            aria-label={mobileOpen ? "Zamknij menu" : "Otwórz menu"}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
-            onClick={() => setMobileOpen((v) => !v)}
-            className={cn(
-              "lg:hidden flex items-center justify-center w-10 h-10",
-              "rounded-[var(--radius-md)] border border-[var(--color-border)]",
-              "bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)]",
-              "hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]",
-              "transition-all duration-[var(--duration-fast)] focus-ring"
-            )}
-          >
-            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              id="mobile-menu-toggle"
+              type="button"
+              aria-label={mobileOpen ? "Zamknij menu" : "Otwórz menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setMobileOpen((v) => !v)}
+              className={cn(
+                "flex items-center justify-center w-10 h-10",
+                "rounded-[var(--radius-md)] border border-[var(--color-border)]",
+                "bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)]",
+                "hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]",
+                "transition-all duration-[var(--duration-fast)] focus-ring"
+              )}
+            >
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </nav>
       </header>
 
