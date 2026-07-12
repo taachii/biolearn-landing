@@ -176,16 +176,6 @@ export function HeroSection() {
                   sizes="(max-width: 640px) 260px, (max-width: 1024px) 300px, 420px"
                 />
 
-                {/* Bottom gradient — blends photo into dark background */}
-                <div
-                  aria-hidden="true"
-                  className="absolute bottom-0 left-0 right-0 h-2/5 pointer-events-none"
-                  style={{
-                    background:
-                      "linear-gradient(to top, var(--color-bg-base) 0%, transparent 100%)",
-                  }}
-                />
-
                 {/* Corner accents */}
                 <span aria-hidden="true" className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-[var(--color-accent)] rounded-tl-lg opacity-80 z-10" />
                 <span aria-hidden="true" className="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-[var(--color-accent)] rounded-tr-lg opacity-80 z-10" />
@@ -306,11 +296,6 @@ export function HeroSection() {
         </dl>
       </div>
 
-      {/* ── Scroll indicator ──────────────────────────────── */}
-      <div aria-hidden="true" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-        <span className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-widest font-medium">Przewiń</span>
-        <span className="w-px h-8 bg-gradient-to-b from-[var(--color-border)] to-transparent" />
-      </div>
     </section>
   );
 }
