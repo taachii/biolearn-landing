@@ -1,3 +1,5 @@
+"use client";
+
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { Button } from "@/components/ui/Button";
 import { Calendar } from "lucide-react";

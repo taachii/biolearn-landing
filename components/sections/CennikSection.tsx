@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { Check } from "lucide-react";
