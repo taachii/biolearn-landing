@@ -71,50 +71,50 @@
 
 /* ============================================================
    LIGHT MODE — html[data-theme="light"] on <html>
-   Medical / Nature palette: light mint backgrounds, dark greens
+   Premium Modern Science: Crisp white/gray bases, vibrant bio-green accents
    ============================================================ */
 html[data-theme="light"] {
   color-scheme: light;
 
   /* Backgrounds */
-  --color-bg-base:     #f2f9f5;
+  --color-bg-base:     #fafbfc;
   --color-bg-surface:  #ffffff;
-  --color-bg-elevated: #e6f4ec;
+  --color-bg-elevated: #f1f4f8;
   --color-bg-card:     #ffffff;
 
   /* Borders */
-  --color-border:        #b8d9c4;
-  --color-border-subtle: #d4ecdc;
+  --color-border:        #e2e8f0;
+  --color-border-subtle: #f1f5f9;
 
-  /* Accent — deeper green for legibility on light */
-  --color-accent:       #00934e;
-  --color-accent-dim:   #007a40;
-  --color-accent-muted: rgba(0, 147, 78, 0.10);
-  --color-accent-glow:  rgba(0, 147, 78, 0.18);
+  /* Accent — Vivid but accessible biology green */
+  --color-accent:       #00a651;
+  --color-accent-dim:   #008a43;
+  --color-accent-muted: rgba(0, 166, 81, 0.10);
+  --color-accent-glow:  rgba(0, 166, 81, 0.15);
 
-  /* Secondary */
-  --color-cyan:       #0098b8;
-  --color-cyan-muted: rgba(0, 152, 184, 0.10);
-  --color-cyan-glow:  rgba(0, 152, 184, 0.18);
+  /* Secondary — Crisp Tech Cyan */
+  --color-cyan:       #0096c7;
+  --color-cyan-muted: rgba(0, 150, 199, 0.10);
+  --color-cyan-glow:  rgba(0, 150, 199, 0.15);
 
-  /* Text */
-  --color-text-primary:   #0a1f14;
-  --color-text-secondary: #2d6645;
-  --color-text-muted:     #7aaa8e;
+  /* Text — Professional Slate/Graphite */
+  --color-text-primary:   #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted:     #94a3b8;
 
   /* Semantic */
-  --color-success: #00934e;
-  --color-warning: #c47a00;
-  --color-error:   #cc2244;
+  --color-success: #00a651;
+  --color-warning: #d97706;
+  --color-error:   #dc2626;
 
   /* Shadows */
-  --shadow-card:        0 4px 24px rgba(0, 80, 40, 0.08);
-  --shadow-glow-accent: 0 0 20px rgba(0, 147, 78, 0.20);
-  --shadow-glow-cyan:   0 0 20px rgba(0, 152, 184, 0.18);
+  --shadow-card:        0 4px 20px rgba(15, 23, 42, 0.05);
+  --shadow-glow-accent: 0 0 20px rgba(0, 166, 81, 0.15);
+  --shadow-glow-cyan:   0 0 20px rgba(0, 150, 199, 0.15);
 
   /* Pattern colors */
-  --dot-color:  rgba(0, 120, 60, 0.18);
-  --hex-stroke: rgba(0, 147, 78, 0.10);
+  --dot-color:  rgba(15, 23, 42, 0.06);
+  --hex-stroke: rgba(0, 166, 81, 0.08);
 }
 
 /* ============================================================
