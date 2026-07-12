@@ -65,7 +65,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-dvh overflow-x-hidden antialiased">
+      <body
+        className="min-h-dvh overflow-x-hidden antialiased bg-[var(--color-bg-base)] text-[var(--color-text-primary)] transition-colors duration-300"
+      >
         {children}
       </body>
     </html>
