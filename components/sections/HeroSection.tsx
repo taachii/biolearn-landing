@@ -53,8 +53,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      aria-labelledby="hero-heading"
-      className="relative min-h-dvh flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 pb-20"
+      className="relative min-h-dvh flex flex-col justify-center pt-24 pb-12 sm:pt-32 sm:pb-16 px-6 sm:px-8 lg:px-10 overflow-hidden"
     >
       {/* ── Backgrounds ────────────────────────────────────── */}
       <div aria-hidden="true" className="absolute inset-0 bg-grid opacity-40" />
@@ -184,7 +183,7 @@ export function HeroSection() {
               {/* ── Floating stat: 90% ──────────────────────── */}
               <div
                 className={cn(
-                  "absolute -left-5 top-[20%]",
+                  "absolute -left-3 sm:-left-8 top-[5%] sm:top-[8%]",
                   "glass rounded-[var(--radius-xl)] px-5 py-3.5",
                   "shadow-[var(--shadow-glow-accent)]",
                   "border border-[rgba(0,230,118,0.20)]"
@@ -197,7 +196,7 @@ export function HeroSection() {
               {/* ── Floating stat: 100. centyl ──────────────── */}
               <div
                 className={cn(
-                  "absolute -right-5 bottom-[22%]",
+                  "absolute -right-3 sm:-right-8 bottom-[8%] sm:bottom-[15%]",
                   "glass rounded-[var(--radius-xl)] px-5 py-3.5",
                   "shadow-[var(--shadow-glow-cyan)]",
                   "border border-[rgba(0,207,255,0.20)]"

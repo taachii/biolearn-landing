@@ -9,26 +9,26 @@ interface HistoriaSectionProps {
 const TIMELINE = [
   {
     id: "start",
-    year: "Początek",
-    title: "Zupełnie od zera",
+    year: "Sierpień 2025",
+    title: "Rozpoczęcie nauki",
     description:
       "Nie miałem wcześniej pojęcia o biologii. Wiedziałem tylko, że muszę się jej nauczyć od podstaw i osiągnąć topowy wynik. Zrozumiałem, że standardowe zakuwanie z podręczników będzie bezcelowe.",
     icon: BookOpen,
   },
   {
     id: "proces",
-    year: "Proces",
-    title: "Budowanie systemu",
+    year: "Styczeń 2026",
+    title: "Przejście na arkusze",
     description:
-      "Zamiast uczyć się definicji na pamięć, zacząłem szukać połączeń przyczynowo-skutkowych. Odkryłem, jak czytać klucz maturalny i jak biologia składa się w jedną logiczną układankę. To diametralnie przyspieszyło proces.",
+      "Zakończyłem przerabianie teorii. Zamiast uczyć się definicji na pamięć, zacząłem szukać połączeń przyczynowo-skutkowych. Odkryłem, jak czytać klucz maturalny i trenowałem wyłącznie na autentycznych zadaniach CKE.",
     icon: BrainCircuit,
   },
   {
     id: "wynik",
-    year: "Finał (9 miesięcy)",
-    title: "90% i 100. Centyl",
+    year: "Lipiec 2026",
+    title: "Rekrutacja na medycynę",
     description:
-      "W mniej niż rok doszedłem od kompletnego zera do wyniku, który osiągnął zaledwie ułamek procenta maturzystów w Polsce. Dowiodłem, że moja metoda po prostu działa, niezależnie od punktu startowego.",
+      "Z 90% i 100. centylem na świadectwie maturalnym, drzwi na uczelnie medyczne stanęły otworem. Dowiodłem, że zoptymalizowana praca własna daje wielokrotnie lepsze efekty niż lata bezmyślnego kucia.",
     icon: Target,
   },
 ];
