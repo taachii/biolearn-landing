@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -67,7 +66,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-dvh overflow-x-hidden antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
+        {children}
       </body>
     </html>
   );

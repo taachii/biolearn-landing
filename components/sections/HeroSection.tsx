@@ -57,8 +57,7 @@ export function HeroSection() {
       className="relative min-h-dvh flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 pb-20"
     >
       {/* ── Backgrounds ────────────────────────────────────── */}
-      {/* Dot pattern — like a cell culture / microscopy view */}
-      <div aria-hidden="true" className="absolute inset-0 bg-dots opacity-70" />
+      <div aria-hidden="true" className="absolute inset-0 bg-grid opacity-40" />
       <div
         aria-hidden="true"
         className="absolute inset-0"
@@ -67,32 +66,6 @@ export function HeroSection() {
             "radial-gradient(ellipse 90% 60% at 60% -5%, rgba(0,230,118,0.09) 0%, transparent 65%)",
         }}
       />
-
-      {/* ── Biology decoration: hex outlines ──────────────── */}
-      <svg
-        aria-hidden="true"
-        className="hex-deco"
-        style={{ width: 420, height: 420, top: -80, right: "-5%", opacity: 0.5 }}
-        viewBox="0 0 420 420"
-      >
-        <polygon points="210,10 390,110 390,310 210,410 30,310 30,110" />
-      </svg>
-      <svg
-        aria-hidden="true"
-        className="hex-deco"
-        style={{ width: 260, height: 260, bottom: 60, left: "2%", opacity: 0.3 }}
-        viewBox="0 0 260 260"
-      >
-        <polygon points="130,6 241,68 241,192 130,254 19,192 19,68" />
-      </svg>
-      <svg
-        aria-hidden="true"
-        className="hex-deco"
-        style={{ width: 140, height: 140, top: "30%", right: "38%", opacity: 0.2 }}
-        viewBox="0 0 140 140"
-      >
-        <polygon points="70,4 129,37 129,103 70,136 11,103 11,37" />
-      </svg>
 
       {/* Glow orbs */}
       <div aria-hidden="true" className="glow-orb-green" style={{ width: 700, height: 700, top: -300, right: "-5%" }} />
