@@ -185,3 +185,39 @@ body {
 .animated-underline:hover::after {
   width: 100%;
 }
+
+/* ============================================================
+   SCROLL ANIMATIONS (CSS-only, no library needed)
+   AnimateIn component toggles `.in-view` class via
+   IntersectionObserver.
+   ============================================================ */
+
+[data-animate] {
+  transition:
+    opacity  0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Initial (hidden) states */
+[data-animate="fade-up"]    { opacity: 0; transform: translateY(28px); }
+[data-animate="fade-in"]    { opacity: 0; }
+[data-animate="fade-left"]  { opacity: 0; transform: translateX(-28px); }
+[data-animate="fade-right"] { opacity: 0; transform: translateX(28px);  }
+[data-animate="zoom-in"]    { opacity: 0; transform: scale(0.94);       }
+
+/* Visible state — toggled by AnimateIn component */
+[data-animate].in-view {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  [data-animate].in-view {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

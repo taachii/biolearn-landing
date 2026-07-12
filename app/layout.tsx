@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Korepetytor Biologii | Bartosz — 90% Matura Rozszerzona, 100. Centyl",
+  title: "Korepetytor Biologii | Adam — 90% Matura Rozszerzona, 100. Centyl",
   description:
     "Korepetycje z biologii przygotowujące do matury rozszerzonej. Systemowe podejście, które w 9 miesięcy dało mi 90% i 100. centyl — od zera, bez wcześniejszej wiedzy.",
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pl_PL",
-    title: "Korepetytor Biologii | 90% Matura, 100. Centyl",
+    title: "Korepetytor Biologii | Adam — 90% Matura, 100. Centyl",
     description:
       "Korepetycje z biologii oparte na systemowym rozumieniu, nie zakuwaniu. Sprawdzone — od zera do 90% w 9 miesięcy.",
   },

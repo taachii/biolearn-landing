@@ -1,11 +1,16 @@
-import { Navbar } from "@/components/layout/Navbar";
-import { HeroSection } from "@/components/sections/HeroSection";
+import { Navbar }          from "@/components/layout/Navbar";
+import { HeroSection }     from "@/components/sections/HeroSection";
+import { SectionDivider }  from "@/components/ui/SectionDivider";
+import { AnimateIn }       from "@/components/ui/AnimateIn";
 
 /**
- * app/page.tsx — Landing Page
+ * app/page.tsx — Landing Page root
  *
- * Sections are imported here and composed in order.
- * Adding a new section = import + drop in the correct spot.
+ * Sections are imported and composed here in order.
+ * To add a section:
+ *   1. Create components/sections/XxxSection.tsx
+ *   2. Import it here
+ *   3. Drop it in the correct spot with a <SectionDivider /> before it
  */
 export default function HomePage() {
   return (
@@ -13,43 +18,65 @@ export default function HomePage() {
       <Navbar />
 
       <main id="main-content" tabIndex={-1}>
+        {/* ── Etap 1: Hero ──────────────────────────────── */}
         <HeroSection />
 
-        {/*
-          ── UPCOMING SECTIONS (Etap 1) ──────────────────────
-          Odkomentuj i zaimplementuj kolejno:
+        {/* ── UPCOMING SECTIONS ─────────────────────────
+            Odkomentuj i zaimplementuj kolejno.
+            Każda sekcja poprzedzona SectionDivider.
 
+          <SectionDivider variant="wave" />
           <HistoriaSection   id="historia"  />
-          <MetodaSection     id="metoda"    />
-          <OfertaSection     id="oferta"    />
-          <CennikSection     id="cennik"    />
-          <FaqSection        id="faq"       />
-          <RezerwacjaSection id="rezerwacja"/>
-          <KontaktSection    id="kontakt"   />
-        */}
 
-        {/* Placeholder sections for IntersectionObserver targets */}
-        <div id="historia"   className="h-screen flex items-center justify-center text-[var(--color-text-muted)] text-sm border-t border-[var(--color-border-subtle)]">
-          — Sekcja: Moja Historia (wkrótce) —
-        </div>
-        <div id="metoda"     className="h-screen flex items-center justify-center text-[var(--color-text-muted)] text-sm border-t border-[var(--color-border-subtle)]">
-          — Sekcja: Metoda (wkrótce) —
-        </div>
-        <div id="oferta"     className="h-screen flex items-center justify-center text-[var(--color-text-muted)] text-sm border-t border-[var(--color-border-subtle)]">
-          — Sekcja: Oferta (wkrótce) —
-        </div>
-        <div id="cennik"     className="h-screen flex items-center justify-center text-[var(--color-text-muted)] text-sm border-t border-[var(--color-border-subtle)]">
-          — Sekcja: Cennik (wkrótce) —
-        </div>
-        <div id="faq"        className="h-screen flex items-center justify-center text-[var(--color-text-muted)] text-sm border-t border-[var(--color-border-subtle)]">
-          — Sekcja: FAQ (wkrótce) —
-        </div>
-        <div id="rezerwacja" className="h-screen flex items-center justify-center text-[var(--color-text-muted)] text-sm border-t border-[var(--color-border-subtle)]">
-          — Sekcja: Rezerwacja / Calendly (wkrótce) —
-        </div>
-        <div id="kontakt"    className="h-screen flex items-center justify-center text-[var(--color-text-muted)] text-sm border-t border-[var(--color-border-subtle)]">
-          — Sekcja: Kontakt (wkrótce) —
-        </div>
+          <SectionDivider variant="diagonal" flip />
+          <MetodaSection     id="metoda"    />
+
+          <SectionDivider variant="curve" />
+          <OfertaSection     id="oferta"    />
+
+          <SectionDivider variant="wave" flip />
+          <CennikSection     id="cennik"    />
+
+          <SectionDivider variant="diagonal" />
+          <FaqSection        id="faq"       />
+
+          <SectionDivider variant="curve" flip />
+          <RezerwacjaSection id="rezerwacja"/>
+
+          <SectionDivider variant="wave" />
+          <KontaktSection    id="kontakt"   />
+        ─────────────────────────────────────────────── */}
+
+        {/* ── Placeholder sections ─────────────────────── */}
+        {(
+          [
+            { id: "historia",   label: "Moja Historia"                 },
+            { id: "metoda",     label: "Metoda"                        },
+            { id: "oferta",     label: "Oferta"                        },
+            { id: "cennik",     label: "Cennik"                        },
+            { id: "faq",        label: "FAQ"                           },
+            { id: "rezerwacja", label: "Rezerwacja / Calendly"         },
+            { id: "kontakt",    label: "Kontakt"                       },
+          ] as const
+        ).map(({ id, label }, i) => (
+          <div key={id}>
+            <SectionDivider
+              variant={["wave", "diagonal", "curve"][i % 3] as "wave" | "diagonal" | "curve"}
+              flip={i % 2 === 1}
+            />
+            <AnimateIn animation="fade-up">
+              <section
+                id={id}
+                aria-label={`Sekcja: ${label} (wkrótce)`}
+                className="min-h-[60vh] flex items-center justify-center"
+              >
+                <p className="text-sm text-[var(--color-text-muted)] tracking-widest uppercase">
+                  — Sekcja: {label} (wkrótce) —
+                </p>
+              </section>
+            </AnimateIn>
+          </div>
+        ))}
       </main>
     </>
   );
