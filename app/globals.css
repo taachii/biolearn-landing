@@ -70,10 +70,10 @@
 }
 
 /* ============================================================
-   LIGHT MODE — .light on <html>
+   LIGHT MODE — data-theme="light" on <html>
    Medical / Nature palette: light mint backgrounds, dark greens
    ============================================================ */
-.light {
+[data-theme="light"] {
   color-scheme: light;
 
   /* Backgrounds */
@@ -166,7 +166,7 @@ body {
   border: 1px solid var(--color-border);
   transition: background 0.3s ease, border-color 0.3s ease;
 }
-.light .glass {
+[data-theme="light"] .glass {
   background: rgba(255, 255, 255, 0.82);
 }
 
@@ -180,8 +180,8 @@ body {
   text-shadow: 0 0 20px rgba(0, 207, 255, 0.45);
 }
 /* Remove glow in light mode */
-.light .text-neon-green,
-.light .text-neon-cyan {
+[data-theme="light"] .text-neon-green,
+[data-theme="light"] .text-neon-cyan {
   text-shadow: none;
 }
 
@@ -249,10 +249,10 @@ body {
   background: radial-gradient(circle, rgba(0, 207, 255, 0.09) 0%, transparent 70%);
   pointer-events: none;
 }
-.light .glow-orb-green {
+[data-theme="light"] .glow-orb-green {
   background: radial-gradient(circle, rgba(0, 147, 78, 0.08) 0%, transparent 70%);
 }
-.light .glow-orb-cyan {
+[data-theme="light"] .glow-orb-cyan {
   background: radial-gradient(circle, rgba(0, 152, 184, 0.07) 0%, transparent 70%);
 }
 

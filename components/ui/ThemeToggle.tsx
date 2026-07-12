@@ -4,8 +4,8 @@
  * components/ui/ThemeToggle.tsx
  *
  * Self-contained dark/light mode toggle.
- * Directly reads/writes the `light` class on <html> and persists
- * the preference in localStorage. No Context required.
+ * Uses data-theme attribute on <html> instead of class toggling
+ * to avoid React hydration conflicts.
  */
 
 import { useEffect, useState } from "react";
@@ -17,34 +17,25 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
-  // Start with null to avoid hydration mismatch
   const [isDark, setIsDark] = useState<boolean | null>(null);
 
   /* ── Read initial theme on mount ────────────────────────── */
   useEffect(() => {
-    const html = document.documentElement;
-    setIsDark(!html.classList.contains("light"));
+    const theme = document.documentElement.getAttribute("data-theme");
+    setIsDark(theme !== "light");
   }, []);
 
   /* ── Toggle ─────────────────────────────────────────────── */
   const toggle = () => {
     const html = document.documentElement;
-    const goLight = html.classList.contains("dark") || !html.classList.contains("light");
-
-    if (goLight) {
-      html.classList.add("light");
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-    } else {
-      html.classList.add("dark");
-      html.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-    }
+    const currentlyLight = html.getAttribute("data-theme") === "light";
+    const next = currentlyLight ? "dark" : "light";
+    html.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    setIsDark(next === "dark");
   };
 
-  // Don't render until client-side to avoid hydration mismatch
+  /* ── Don't render until client hydrated ────────────────── */
   if (isDark === null) return <div className="w-9 h-9" />;
 
   return (
