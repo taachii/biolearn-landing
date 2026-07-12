@@ -1,0 +1,307 @@
+"use client";
+
+/**
+ * components/layout/Navbar.tsx
+ *
+ * Sticky navigation bar with:
+ * - Glass morphism backdrop (becomes opaque on scroll)
+ * - Smooth active-section highlighting via IntersectionObserver
+ * - Mobile hamburger drawer
+ * - Accessible keyboard navigation
+ */
+
+import { useEffect, useRef, useState, useCallback } from "react";
+import { Menu, X, Dna } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
+
+/* ── Nav links ──────────────────────────────────────────── */
+const NAV_LINKS = [
+  { label: "Moja historia",  href: "#historia"     },
+  { label: "Metoda",         href: "#metoda"        },
+  { label: "Oferta",         href: "#oferta"        },
+  { label: "Cennik",         href: "#cennik"        },
+  { label: "FAQ",            href: "#faq"           },
+  { label: "Kontakt",        href: "#kontakt"       },
+] as const;
+
+/* ── Component ──────────────────────────────────────────── */
+export function Navbar() {
+  const [isScrolled,     setIsScrolled]     = useState(false);
+  const [mobileOpen,     setMobileOpen]     = useState(false);
+  const [activeSection,  setActiveSection]  = useState<string>("");
+
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  /* ── Scroll detection ─────────────────────────────────── */
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  /* ── Active section via IntersectionObserver ──────────── */
+  useEffect(() => {
+    const sectionIds = NAV_LINKS.map((l) => l.href.replace("#", ""));
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
+  /* ── Close mobile menu on outside click ──────────────── */
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const handleOutside = (e: MouseEvent) => {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(e.target as Node)
+      ) {
+        setMobileOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutside);
+    return () => document.removeEventListener("mousedown", handleOutside);
+  }, [mobileOpen]);
+
+  /* ── Trap scroll when mobile menu is open ────────────── */
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
+  /* ── Smooth scroll helper ─────────────────────────────── */
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      e.preventDefault();
+      const id = href.replace("#", "");
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setMobileOpen(false);
+    },
+    []
+  );
+
+  return (
+    <>
+      {/* ── Main bar ──────────────────────────────────────── */}
+      <header
+        role="banner"
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50",
+          "transition-all duration-[var(--duration-slow)] ease-[var(--ease-out-expo)]",
+          isScrolled
+            ? "glass border-b border-[var(--color-border)] py-3"
+            : "bg-transparent py-5"
+        )}
+      >
+        <nav
+          aria-label="Główna nawigacja"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between"
+        >
+          {/* ── Logo ───────────────────────────────────────── */}
+          <a
+            href="#"
+            aria-label="Strona główna — Korepetytor Biologii"
+            className="flex items-center gap-2.5 group focus-ring rounded-[var(--radius-md)]"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            <span
+              className={cn(
+                "flex items-center justify-center w-9 h-9 rounded-[var(--radius-md)]",
+                "bg-[var(--color-accent-muted)] border border-[rgba(0,230,118,0.30)]",
+                "group-hover:shadow-[var(--shadow-glow-accent)] transition-shadow duration-[var(--duration-normal)]"
+              )}
+            >
+              <Dna size={18} className="text-[var(--color-accent)]" />
+            </span>
+            <span className="font-display font-semibold text-[var(--color-text-primary)] leading-tight hidden sm:block">
+              bio<span className="text-neon-green">learn</span>
+            </span>
+          </a>
+
+          {/* ── Desktop links ──────────────────────────────── */}
+          <ul
+            role="list"
+            className="hidden lg:flex items-center gap-1"
+          >
+            {NAV_LINKS.map(({ label, href }) => {
+              const sectionId = href.replace("#", "");
+              const isActive  = activeSection === sectionId;
+
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    aria-current={isActive ? "location" : undefined}
+                    onClick={(e) => handleNavClick(e, href)}
+                    className={cn(
+                      "relative px-4 py-2 rounded-[var(--radius-md)] text-sm font-medium",
+                      "transition-colors duration-[var(--duration-fast)]",
+                      "focus-ring animated-underline",
+                      isActive
+                        ? "text-[var(--color-accent)]"
+                        : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+                    )}
+                  >
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* ── Desktop CTA ────────────────────────────────── */}
+          <div className="hidden lg:flex items-center gap-3">
+            <Button
+              size="md"
+              variant="primary"
+              onClick={() =>
+                document
+                  .getElementById("rezerwacja")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Zapisz się na lekcję
+            </Button>
+          </div>
+
+          {/* ── Mobile hamburger ───────────────────────────── */}
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            aria-label={mobileOpen ? "Zamknij menu" : "Otwórz menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setMobileOpen((v) => !v)}
+            className={cn(
+              "lg:hidden flex items-center justify-center w-10 h-10",
+              "rounded-[var(--radius-md)] border border-[var(--color-border)]",
+              "bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)]",
+              "hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]",
+              "transition-all duration-[var(--duration-fast)] focus-ring"
+            )}
+          >
+            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </nav>
+      </header>
+
+      {/* ── Mobile menu backdrop ──────────────────────────── */}
+      <div
+        aria-hidden={!mobileOpen}
+        className={cn(
+          "fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden",
+          "transition-opacity duration-[var(--duration-normal)]",
+          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
+        onClick={() => setMobileOpen(false)}
+      />
+
+      {/* ── Mobile menu drawer ────────────────────────────── */}
+      <div
+        id="mobile-menu"
+        ref={mobileMenuRef}
+        role="dialog"
+        aria-label="Menu nawigacyjne"
+        aria-modal="true"
+        className={cn(
+          "fixed top-0 right-0 bottom-0 z-50 w-[min(80vw,320px)] lg:hidden",
+          "flex flex-col",
+          "glass border-l border-[var(--color-border)]",
+          "transform transition-transform duration-[var(--duration-slow)] ease-[var(--ease-out-expo)]",
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--color-border-subtle)]">
+          <span className="font-display font-semibold text-[var(--color-text-primary)]">
+            bio<span className="text-neon-green">learn</span>
+          </span>
+          <button
+            type="button"
+            aria-label="Zamknij menu"
+            onClick={() => setMobileOpen(false)}
+            className={cn(
+              "flex items-center justify-center w-8 h-8",
+              "rounded-[var(--radius-md)] text-[var(--color-text-muted)]",
+              "hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-elevated)]",
+              "transition-colors duration-[var(--duration-fast)] focus-ring"
+            )}
+          >
+            <X size={16} />
+          </button>
+        </div>
+
+        {/* Links */}
+        <nav
+          aria-label="Menu mobilne"
+          className="flex-1 overflow-y-auto px-4 py-6"
+        >
+          <ul role="list" className="flex flex-col gap-1">
+            {NAV_LINKS.map(({ label, href }) => {
+              const sectionId = href.replace("#", "");
+              const isActive  = activeSection === sectionId;
+
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    aria-current={isActive ? "location" : undefined}
+                    onClick={(e) => handleNavClick(e, href)}
+                    className={cn(
+                      "flex items-center gap-3 px-4 py-3",
+                      "rounded-[var(--radius-md)] text-sm font-medium",
+                      "transition-all duration-[var(--duration-fast)] focus-ring",
+                      isActive
+                        ? "bg-[var(--color-accent-muted)] text-[var(--color-accent)] border border-[rgba(0,230,118,0.20)]"
+                        : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-elevated)]"
+                    )}
+                  >
+                    {isActive && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0" />
+                    )}
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        {/* CTA */}
+        <div className="px-4 pb-6 pt-4 border-t border-[var(--color-border-subtle)]">
+          <Button
+            variant="primary"
+            size="lg"
+            className="w-full"
+            onClick={() => {
+              document
+                .getElementById("rezerwacja")
+                ?.scrollIntoView({ behavior: "smooth" });
+              setMobileOpen(false);
+            }}
+          >
+            Zapisz się na lekcję
+          </Button>
+        </div>
+      </div>
+    </>
+  );
+}
