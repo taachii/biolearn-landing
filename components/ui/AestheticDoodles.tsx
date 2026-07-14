@@ -108,11 +108,14 @@ export function AestheticDoodles() {
         size: Math.floor(Math.random() * 32) + 24, 
         rotation: baseRotation,
         duration: Math.random() * 25 + 20, 
+        travelDuration: Math.random() * 60 + 60, // 60-120 seconds
         delay: Math.random() * -30, 
-        opacity: Math.random() * 0.12 + 0.03, 
+        opacity: Math.random() * 0.22 + 0.08, // Increased opacity: 8% to 30% visibility
         colorClass: colors[Math.floor(Math.random() * colors.length)],
         yDrift: Math.random() * 80 - 40, 
         xDrift: Math.random() * 80 - 40, 
+        yTravel: Math.random() * 200 - 100,
+        xTravel: Math.random() * 200 - 100,
         rotDrift: baseRotation + (Math.random() * 90 - 45), 
         // Parallax depth multiplier
         parallaxX: Math.random() * 60 - 30,
