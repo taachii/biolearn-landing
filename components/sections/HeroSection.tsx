@@ -119,10 +119,10 @@ export function HeroSection() {
       </div>
 
       {/* Scroll hint */}
-      <AnimateIn animation="fade-in" delay={900} className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <AnimateIn animation="fade-in" delay={900} className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
         <ChevronDown
-          size={24}
-          className="text-[var(--color-text-muted)] animate-bounce"
+          size={32}
+          className="text-[var(--color-text-secondary)] opacity-70 animate-bounce"
           aria-hidden="true"
         />
       </AnimateIn>
