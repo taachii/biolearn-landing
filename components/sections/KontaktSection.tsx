@@ -8,7 +8,7 @@ interface KontaktSectionProps {
 
 export function KontaktSection({ id }: KontaktSectionProps) {
   return (
-    <footer id={id} className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 px-4 sm:px-6 lg:px-8 border-t border-[var(--color-border)] mt-12 bg-[var(--color-bg-base)]">
+    <footer id={id} className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 px-8 sm:px-10 lg:px-12 border-t border-[var(--color-border)] mt-12 bg-[var(--color-bg-base)]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           

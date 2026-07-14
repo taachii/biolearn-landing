@@ -31,7 +31,7 @@ const OFERTA = [
 
 export function OfertaSection({ id }: OfertaSectionProps) {
   return (
-    <section id={id} className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12 overflow-hidden">
       <div className="relative max-w-5xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           

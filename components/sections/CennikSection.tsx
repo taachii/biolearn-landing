@@ -11,7 +11,7 @@ interface CennikSectionProps {
 
 export function CennikSection({ id }: CennikSectionProps) {
   return (
-    <section id={id} className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
+    <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12">
       <div className="relative max-w-4xl mx-auto text-center">
         <AnimateIn animation="fade-up" className="mb-12">
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
