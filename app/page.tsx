@@ -1,8 +1,8 @@
 import { Navbar }          from "@/components/layout/Navbar";
 import { HeroSection }     from "@/components/sections/HeroSection";
 import { SectionDivider }  from "@/components/ui/SectionDivider";
-import { AnimateIn }       from "@/components/ui/AnimateIn";
 
+import { KimJestemSection }  from "@/components/sections/KimJestemSection";
 import { HistoriaSection }   from "@/components/sections/HistoriaSection";
 import { MetodaSection }     from "@/components/sections/MetodaSection";
 import { OfertaSection }     from "@/components/sections/OfertaSection";
@@ -11,43 +11,39 @@ import { FaqSection }        from "@/components/sections/FaqSection";
 import { RezerwacjaSection } from "@/components/sections/RezerwacjaSection";
 import { KontaktSection }    from "@/components/sections/KontaktSection";
 
-/**
- * app/page.tsx — Landing Page root
- *
- * Sections are imported and composed here in order.
- * To add a section:
- *   1. Create components/sections/XxxSection.tsx
- *   2. Import it here
- *   3. Drop it in the correct spot with a <SectionDivider /> before it
- */
 export default function HomePage() {
   return (
     <>
       <Navbar />
 
       <main id="main-content" tabIndex={-1}>
-        {/* ── Etap 1: Hero ──────────────────────────────── */}
+        {/* ── Hero ────────────────────────────────────────── */}
         <HeroSection />
 
+        {/* ── Kim jestem? ─────────────────────────────────── */}
         <SectionDivider variant="wave" />
+        <KimJestemSection  id="kim-jestem" />
+
+        {/* ── Moja historia ───────────────────────────────── */}
+        <SectionDivider variant="diagonal" flip />
         <HistoriaSection   id="historia"  />
 
-        <SectionDivider variant="diagonal" flip />
+        <SectionDivider variant="curve" />
         <MetodaSection     id="metoda"    />
 
-        <SectionDivider variant="curve" />
+        <SectionDivider variant="wave" flip />
         <OfertaSection     id="oferta"    />
 
-        <SectionDivider variant="wave" flip />
+        <SectionDivider variant="diagonal" />
         <CennikSection     id="cennik"    />
 
-        <SectionDivider variant="diagonal" />
+        <SectionDivider variant="curve" flip />
         <FaqSection        id="faq"       />
 
-        <SectionDivider variant="curve" flip />
+        <SectionDivider variant="wave" />
         <RezerwacjaSection id="rezerwacja"/>
 
-        <SectionDivider variant="wave" />
+        <SectionDivider variant="diagonal" flip />
         <KontaktSection    id="kontakt"   />
 
       </main>
