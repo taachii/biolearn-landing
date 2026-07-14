@@ -129,7 +129,14 @@ export function AestheticDoodles() {
   if (doodles.length === 0) return null;
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div 
+      className="absolute inset-0 overflow-hidden pointer-events-none z-0"
+      style={{
+        // Creates a smooth fade-out hole in the center to protect the text
+        maskImage: "radial-gradient(ellipse 60% 45% at 50% 50%, transparent 35%, black 70%)",
+        WebkitMaskImage: "radial-gradient(ellipse 60% 45% at 50% 50%, transparent 35%, black 70%)",
+      }}
+    >
       {doodles.map((d) => (
         <DoodleItem key={d.id} d={d} mouseX={smoothX} mouseY={smoothY} />
       ))}
