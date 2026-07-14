@@ -38,12 +38,22 @@ export function HeroSection() {
           <h1
             id="hero-heading"
             className="font-display font-bold tracking-tight text-[var(--color-text-primary)]"
-            style={{ fontSize: "clamp(2.6rem, 5.5vw + 1rem, 5rem)", lineHeight: 1.08 }}
           >
-            Przestań kuć biologię na pamięć.{" "}
-            <br className="hidden sm:block" />
-            Zacznij ją{" "}
-            <span className="text-neon-green">rozumieć!</span>
+            {/* Line 1 — slightly smaller, softer */}
+            <span
+              className="block text-[var(--color-text-secondary)]"
+              style={{ fontSize: "clamp(1.6rem, 3vw + 0.6rem, 2.8rem)", lineHeight: 1.2, fontWeight: 500 }}
+            >
+              Przestań kuć biologię na pamięć.
+            </span>
+            {/* Line 2 — big statement */}
+            <span
+              className="block mt-2"
+              style={{ fontSize: "clamp(2.8rem, 6vw + 0.8rem, 5.5rem)", lineHeight: 1.05 }}
+            >
+              Zacznij ją{" "}
+              <span className="text-neon-green">rozumieć!</span>
+            </span>
           </h1>
         </AnimateIn>
 

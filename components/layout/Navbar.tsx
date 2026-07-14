@@ -18,12 +18,13 @@ import { cn } from "@/lib/utils";
 
 /* ── Nav links ──────────────────────────────────────────── */
 const NAV_LINKS = [
-  { label: "Moja historia",  href: "#historia"     },
-  { label: "Metoda",         href: "#metoda"        },
-  { label: "Oferta",         href: "#oferta"        },
-  { label: "Cennik",         href: "#cennik"        },
-  { label: "FAQ",            href: "#faq"           },
-  { label: "Kontakt",        href: "#kontakt"       },
+  { label: "Kim jestem?",    href: "#kim-jestem"   },
+  { label: "Moja historia", href: "#historia"      },
+  { label: "Metoda",        href: "#metoda"        },
+  { label: "Oferta",        href: "#oferta"        },
+  { label: "Cennik",        href: "#cennik"        },
+  { label: "FAQ",           href: "#faq"           },
+  { label: "Kontakt",       href: "#kontakt"       },
 ] as const;
 
 /* ── Component ──────────────────────────────────────────── */
@@ -36,7 +37,11 @@ export function Navbar() {
 
   /* ── Scroll detection ─────────────────────────────────── */
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+      // Clear active section when near the very top (hero area)
+      if (window.scrollY < 100) setActiveSection("");
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -54,7 +59,7 @@ export function Navbar() {
         ([entry]) => {
           if (entry.isIntersecting) setActiveSection(id);
         },
-        { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+        { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
       );
       observer.observe(el);
       observers.push(observer);
