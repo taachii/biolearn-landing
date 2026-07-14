@@ -206,12 +206,26 @@ html[data-theme="light"] .text-neon-cyan {
   background-size: 32px 32px;
 }
 
-/* Alternate — tighter grid for hero */
+/* Alternate — line grid for hero */
 .bg-grid {
   background-image:
     linear-gradient(var(--dot-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--dot-color) 1px, transparent 1px);
   background-size: 48px 48px;
+}
+
+/* Theme-aware dot grids for Hero */
+.dark-dots {
+  display: block; /* visible in dark mode (default) */
+}
+html[data-theme="light"] .dark-dots {
+  display: none;
+}
+.light-dots {
+  display: none; /* hidden in dark mode */
+}
+html[data-theme="light"] .light-dots {
+  display: block;
 }
 
 /* Decorative hex shape (border only, large) */

@@ -19,8 +19,24 @@ export function HeroSection() {
       className="relative min-h-dvh flex flex-col justify-center items-center text-center pt-28 pb-20 px-6 sm:px-8 overflow-hidden"
     >
       {/* ── Backgrounds ─────────────────────────────────────────── */}
-      {/* Dot grid background */}
-      <div aria-hidden="true" className="absolute inset-0 bg-grid opacity-100" />
+      {/* Dot grid — dark mode */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 hidden dark-dots"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.20) 1.5px, transparent 1.5px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+      {/* Dot grid — light mode */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 hidden light-dots"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(15,23,42,0.18) 1.5px, transparent 1.5px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
 
       {/* Top green bloom */}
       <div
