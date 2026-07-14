@@ -33,7 +33,7 @@ export function HeroSection() {
         aria-hidden="true"
         className="absolute inset-0 hidden light-dots"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(15,23,42,0.18) 1.5px, transparent 1.5px)",
+          backgroundImage: "radial-gradient(circle, rgba(15,23,42,0.35) 2px, transparent 2px)",
           backgroundSize: "32px 32px",
         }}
       />
