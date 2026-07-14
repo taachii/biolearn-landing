@@ -308,3 +308,9 @@ html[data-theme="light"] .glow-orb-cyan {
     transform: none;
   }
 }
+
+/* DNA helix gentle drift */
+@keyframes dna-drift {
+  0%   { transform: translateY(-16px); }
+  100% { transform: translateY(16px);  }
+}

@@ -1,16 +1,9 @@
 "use client";
 
-import { ArrowRight, ChevronDown, TrendingUp, Award, Clock } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { Button }    from "@/components/ui/Button";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { cn } from "@/lib/utils";
-
-/* Floating proof chips shown around the headline */
-const CHIPS = [
-  { id: "chip-score",  label: "90%",         sub: "Matura rozszerzona", accent: "green", pos: "top-[18%] left-[4%]  lg:left-[8%]",  icon: TrendingUp, delay: 500 },
-  { id: "chip-centyl", label: "100. centyl",  sub: "wśród maturzystów",  accent: "cyan",  pos: "top-[18%] right-[4%] lg:right-[8%]", icon: Award,       delay: 600 },
-  { id: "chip-time",   label: "9 miesięcy",   sub: "od zera do matury",  accent: "green", pos: "bottom-[22%] left-[2%] lg:left-[6%]", icon: Clock,      delay: 700 },
-] as const;
+import { DnaHelix }  from "@/components/ui/DnaHelix";
 
 export function HeroSection() {
   return (
@@ -18,72 +11,59 @@ export function HeroSection() {
       id="hero"
       className="relative min-h-dvh flex flex-col justify-center items-center text-center pt-28 pb-20 px-6 sm:px-8 overflow-hidden"
     >
-      {/* ── Backgrounds ─────────────────────────────────────────── */}
-      {/* Dot grid — dark mode */}
+      {/* ── Dot grid backgrounds ─────────────────────────────── */}
+      {/* Dark mode */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 hidden dark-dots"
+        className="absolute inset-0 dark-dots"
         style={{
           backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.20) 1.5px, transparent 1.5px)",
           backgroundSize: "32px 32px",
         }}
       />
-      {/* Dot grid — light mode */}
+      {/* Light mode */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 hidden light-dots"
+        className="absolute inset-0 light-dots"
         style={{
           backgroundImage: "radial-gradient(circle, rgba(15,23,42,0.22) 1.5px, transparent 1.5px)",
           backgroundSize: "32px 32px",
         }}
       />
 
-      {/* Top green bloom */}
+      {/* ── Green bloom top + cyan glow bottom-left ─────────── */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse 70% 50% at 50% -5%, rgba(0,230,118,0.13) 0%, transparent 60%)" }}
       />
-      {/* Bottom-left cyan glow */}
       <div
         aria-hidden="true"
         className="absolute bottom-0 left-0 w-[600px] h-[400px] pointer-events-none"
         style={{ background: "radial-gradient(ellipse at 0% 100%, rgba(0,207,255,0.08) 0%, transparent 60%)" }}
       />
 
-      {/* Decorative vertical lines */}
-      <div aria-hidden="true" className="absolute inset-y-0 left-[15%] w-px bg-gradient-to-b from-transparent via-[var(--color-border)] to-transparent opacity-40 hidden lg:block" />
-      <div aria-hidden="true" className="absolute inset-y-0 right-[15%] w-px bg-gradient-to-b from-transparent via-[var(--color-border)] to-transparent opacity-40 hidden lg:block" />
+      {/* ── Decorative vertical lines ────────────────────────── */}
+      <div aria-hidden="true" className="absolute inset-y-0 left-[15%] w-px bg-gradient-to-b from-transparent via-[var(--color-border)] to-transparent opacity-40 hidden xl:block" />
+      <div aria-hidden="true" className="absolute inset-y-0 right-[15%] w-px bg-gradient-to-b from-transparent via-[var(--color-border)] to-transparent opacity-40 hidden xl:block" />
 
-      {/* ── Floating proof chips ────────────────────────────────── */}
-      {CHIPS.map(({ id, label, sub, accent, pos, icon: Icon, delay }) => (
-        <AnimateIn
-          key={id}
-          animation="zoom-in"
-          delay={delay}
-          className={cn("absolute hidden lg:flex items-center gap-3 pointer-events-none", pos)}
-        >
-          <div className={cn(
-            "glass rounded-[var(--radius-xl)] px-4 py-3 flex items-center gap-3 border",
-            accent === "green"
-              ? "border-[rgba(0,230,118,0.20)] shadow-[var(--shadow-glow-accent)]"
-              : "border-[rgba(0,207,255,0.20)] shadow-[var(--shadow-glow-cyan)]"
-          )}>
-            <span className={cn(
-              "flex items-center justify-center w-8 h-8 rounded-[var(--radius-md)] shrink-0",
-              accent === "green" ? "bg-[var(--color-accent-muted)] text-[var(--color-accent)]" : "bg-[var(--color-cyan-muted)] text-[var(--color-cyan)]"
-            )}>
-              <Icon size={15} />
-            </span>
-            <div className="text-left">
-              <div className={cn("font-display font-bold text-lg leading-none", accent === "green" ? "text-neon-green" : "text-neon-cyan")}>
-                {label}
-              </div>
-              <div className="text-[10px] text-[var(--color-text-muted)] mt-0.5 font-medium">{sub}</div>
-            </div>
-          </div>
-        </AnimateIn>
-      ))}
+      {/* ── DNA Helices ──────────────────────────────────────── */}
+      {/* Left helix */}
+      <div
+        aria-hidden="true"
+        className="absolute top-1/2 -translate-y-1/2 left-[2%] opacity-55 hidden lg:block"
+        style={{ animation: "dna-drift 14s ease-in-out infinite alternate" }}
+      >
+        <DnaHelix height={520} width={80} turns={4} />
+      </div>
+      {/* Right helix — slightly offset vertically for asymmetry */}
+      <div
+        aria-hidden="true"
+        className="absolute top-[45%] -translate-y-1/2 right-[2%] opacity-55 hidden lg:block"
+        style={{ animation: "dna-drift 14s ease-in-out infinite alternate-reverse" }}
+      >
+        <DnaHelix height={520} width={80} turns={4} />
+      </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
       <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-8">
@@ -146,20 +126,6 @@ export function HeroSection() {
               Kim jestem?
             </Button>
           </div>
-        </AnimateIn>
-
-        {/* Mobile proof chips — displayed inline below CTAs on mobile */}
-        <AnimateIn animation="fade-up" delay={400} className="flex lg:hidden flex-wrap justify-center gap-2 mt-2">
-          {CHIPS.map(({ id, label, sub, accent, icon: Icon }) => (
-            <div key={id} className={cn(
-              "glass rounded-full px-3 py-1.5 flex items-center gap-2 border text-xs",
-              accent === "green" ? "border-[rgba(0,230,118,0.20)]" : "border-[rgba(0,207,255,0.20)]"
-            )}>
-              <Icon size={12} className={accent === "green" ? "text-[var(--color-accent)]" : "text-[var(--color-cyan)]"} />
-              <span className={cn("font-bold", accent === "green" ? "text-neon-green" : "text-neon-cyan")}>{label}</span>
-              <span className="text-[var(--color-text-muted)]">{sub}</span>
-            </div>
-          ))}
         </AnimateIn>
       </div>
 
