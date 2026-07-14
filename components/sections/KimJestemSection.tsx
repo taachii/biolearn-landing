@@ -89,7 +89,7 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
             <div className="relative w-full max-w-[340px] sm:max-w-[400px]">
               {/* Photo card */}
               <div
-                className="relative aspect-[3/4] w-full rounded-[var(--radius-2xl)] overflow-hidden border border-[var(--color-border)] shadow-[var(--shadow-card)] bg-[var(--color-bg-card)]"
+                className="relative aspect-[3/4] w-full rounded-[var(--radius-2xl)] overflow-hidden border border-[#27272a] shadow-[var(--shadow-card)] bg-[#121214]"
               >
                 <Image
                   src="/images/adam.png"
