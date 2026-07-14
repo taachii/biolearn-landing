@@ -81,12 +81,9 @@ export function HeroSection() {
 
             {/* H1 & Text */}
             <AnimateIn animation="fade-right">
-              <div className="inline-block py-1.5 px-3 rounded-full bg-[var(--color-accent-muted)] text-[var(--color-accent)] text-xs sm:text-sm font-semibold mb-6 border border-[rgba(0,230,118,0.20)] shadow-[var(--shadow-glow-accent)]">
-                🚀 Zapisy na przygotowania do Matury 2026
-              </div>
               <h1 id="hero-heading" className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-                Systemowe podejście do biologii. <br />
-                Klucz do <span className="text-neon-green">wysokiego wyniku</span>
+                Przestań kuć biologię na pamięć. <br />
+                Zacznij ją <span className="text-neon-green">rozumieć!</span>
               </h1>
               <p className="text-lg sm:text-xl text-[var(--color-text-secondary)] mb-10 max-w-2xl leading-relaxed">
                 Biologia to nie nauka na pamięć, to system naczyń połączonych. Opanowałem go od zera i zdałem maturę rozszerzoną na 90% w 9 miesięcy. Nauczę Cię logicznego myślenia, które wpasowuje się w klucz CKE.
