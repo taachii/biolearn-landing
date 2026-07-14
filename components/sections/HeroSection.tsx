@@ -47,22 +47,24 @@ export function HeroSection() {
       <div aria-hidden="true" className="absolute inset-y-0 left-[15%] w-px bg-gradient-to-b from-transparent via-[var(--color-border)] to-transparent opacity-40 hidden xl:block" />
       <div aria-hidden="true" className="absolute inset-y-0 right-[15%] w-px bg-gradient-to-b from-transparent via-[var(--color-border)] to-transparent opacity-40 hidden xl:block" />
 
-      {/* ── DNA Helices ──────────────────────────────────────── */}
+      {/* ── DNA Helices — symmetrical, animation on inner div ─ */}
       {/* Left helix */}
       <div
         aria-hidden="true"
-        className="absolute top-1/2 -translate-y-1/2 left-[2%] opacity-55 hidden lg:block"
-        style={{ animation: "dna-drift 14s ease-in-out infinite alternate" }}
+        className="absolute top-0 bottom-0 left-[1%] hidden lg:flex items-center pointer-events-none"
       >
-        <DnaHelix height={520} width={80} turns={4} />
+        <div style={{ animation: "dna-drift 12s ease-in-out infinite alternate" }}>
+          <DnaHelix height={520} width={80} turns={4} className="opacity-55" />
+        </div>
       </div>
-      {/* Right helix — slightly offset vertically for asymmetry */}
+      {/* Right helix */}
       <div
         aria-hidden="true"
-        className="absolute top-[45%] -translate-y-1/2 right-[2%] opacity-55 hidden lg:block"
-        style={{ animation: "dna-drift 14s ease-in-out infinite alternate-reverse" }}
+        className="absolute top-0 bottom-0 right-[1%] hidden lg:flex items-center pointer-events-none"
       >
-        <DnaHelix height={520} width={80} turns={4} />
+        <div style={{ animation: "dna-drift 12s ease-in-out infinite alternate-reverse" }}>
+          <DnaHelix height={520} width={80} turns={4} className="opacity-55" />
+        </div>
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
