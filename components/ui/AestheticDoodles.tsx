@@ -16,11 +16,14 @@ interface DoodleDef {
   size: number;
   rotation: number;
   duration: number;
+  travelDuration: number;
   delay: number;
   opacity: number;
   colorClass: string;
   yDrift: number;
   xDrift: number;
+  yTravel: number;
+  xTravel: number;
   rotDrift: number;
   parallaxX: number;
   parallaxY: number;
@@ -29,7 +32,7 @@ interface DoodleDef {
 function DoodleItem({ d, mouseX, mouseY }: { d: DoodleDef, mouseX: MotionValue<number>, mouseY: MotionValue<number> }) {
   const Icon = d.Icon;
   
-  // Create parallax transform per-item based on mouse
+  // Parallax transform (Layer 1)
   const xOffset = useTransform(mouseX, [-1, 1], [-d.parallaxX, d.parallaxX]);
   const yOffset = useTransform(mouseY, [-1, 1], [-d.parallaxY, d.parallaxY]);
 
@@ -43,15 +46,24 @@ function DoodleItem({ d, mouseX, mouseY }: { d: DoodleDef, mouseX: MotionValue<n
         x: xOffset,
         y: yOffset,
       }}
-      initial={{ rotate: d.rotation }}
-      animate={{ rotate: [d.rotation, d.rotDrift, d.rotation] }}
-      transition={{ duration: d.duration, delay: d.delay, repeat: Infinity, ease: "easeInOut" }}
     >
+      {/* Layer 2: Macro positional travel across the screen */}
       <motion.div
-        animate={{ y: [0, d.yDrift, 0], x: [0, d.xDrift, 0] }}
-        transition={{ duration: d.duration, delay: d.delay, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ x: [0, d.xTravel, 0], y: [0, d.yTravel, 0] }}
+        transition={{ duration: d.travelDuration, delay: d.delay, repeat: Infinity, ease: "linear" }}
       >
-        <Icon size={d.size} strokeWidth={1.5} />
+        {/* Layer 3: Micro wobble and rotation */}
+        <motion.div
+          initial={{ rotate: d.rotation }}
+          animate={{
+            rotate: [d.rotation, d.rotDrift, d.rotation],
+            y: [0, d.yDrift, 0],
+            x: [0, d.xDrift, 0],
+          }}
+          transition={{ duration: d.duration, delay: d.delay, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Icon size={d.size} strokeWidth={1.5} />
+        </motion.div>
       </motion.div>
     </motion.div>
   );
