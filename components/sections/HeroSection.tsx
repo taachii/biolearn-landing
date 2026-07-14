@@ -3,6 +3,7 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button }    from "@/components/ui/Button";
 import { AnimateIn } from "@/components/ui/AnimateIn";
+import { FloatingBiology } from "@/components/ui/FloatingBiology";
 
 export function HeroSection() {
   return (
@@ -10,6 +11,9 @@ export function HeroSection() {
       id="hero"
       className="relative min-h-dvh flex flex-col justify-center items-center text-center pt-28 pb-20 px-6 sm:px-8 overflow-hidden"
     >
+      {/* ── Floating 3D Biology (Parallax) ─────────────────── */}
+      <FloatingBiology />
+
       {/* ── Dot grid backgrounds ─────────────────────────────── */}
       {/* Dark mode */}
       <div

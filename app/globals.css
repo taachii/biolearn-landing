@@ -228,6 +228,16 @@ html[data-theme="light"] .light-dots {
   display: block;
 }
 
+/* Floating Biology 3D assets blending */
+.bio-blend {
+  mix-blend-mode: screen; /* Drops pure black background, keeps glowing colors */
+}
+html[data-theme="light"] .bio-blend {
+  /* Inverts black background to white, and uses multiply to drop white background */
+  filter: invert(1) hue-rotate(180deg);
+  mix-blend-mode: multiply;
+}
+
 /* Decorative hex shape (border only, large) */
 .hex-deco {
   position: absolute;
