@@ -27,9 +27,10 @@ interface DoodleDef {
   rotDrift: number;
   parallaxX: number;
   parallaxY: number;
+  blur: number;
 }
 
-function DoodleItem({ d, mouseX, mouseY }: { d: DoodleDef, mouseX: MotionValue<number>, mouseY: MotionValue<number> }) {
+function DoodleItem({ d, mouseX, mouseY, blur }: { d: DoodleDef, mouseX: MotionValue<number>, mouseY: MotionValue<number>, blur: number }) {
   const Icon = d.Icon;
   
   // Parallax transform (Layer 1)
@@ -45,6 +46,7 @@ function DoodleItem({ d, mouseX, mouseY }: { d: DoodleDef, mouseX: MotionValue<n
         opacity: `calc(${d.opacity} * var(--doodle-opacity))`,
         x: xOffset,
         y: yOffset,
+        filter: blur > 0 ? `blur(${blur}px)` : "none",
       }}
     >
       {/* Layer 2: Macro positional travel across the screen */}
@@ -97,29 +99,32 @@ export function AestheticDoodles() {
     // Generate positions strictly on client to avoid Next.js hydration mismatch
     const colors = ["text-neon-green", "text-neon-cyan", "text-[var(--color-text-muted)]", "text-[var(--color-text-secondary)]"];
     
-    // Increased count to 45
-    const newDoodles = Array.from({ length: 45 }).map((_, i) => {
+    // Less doodles and smaller sizes on mobile to prevent clutter
+    const isMobile = window.innerWidth < 768;
+    const count = isMobile ? 20 : 55;
+    
+    const newDoodles = Array.from({ length: count }).map((_, i) => {
       const baseRotation = Math.floor(Math.random() * 360);
       return {
         id: i,
         Icon: ICONS[Math.floor(Math.random() * ICONS.length)],
         top: Math.random() * 100, 
         left: Math.random() * 100, 
-        size: Math.floor(Math.random() * 32) + 24, 
+        size: isMobile ? Math.floor(Math.random() * 20) + 16 : Math.floor(Math.random() * 40) + 16, 
         rotation: baseRotation,
-        duration: Math.random() * 25 + 20, 
-        travelDuration: Math.random() * 60 + 60, // 60-120 seconds
+        duration: Math.random() * 25 + 25, 
+        travelDuration: Math.random() * 60 + 60, 
         delay: Math.random() * -30, 
-        opacity: Math.random() * 0.22 + 0.08, // Increased opacity: 8% to 30% visibility
+        opacity: Math.random() * 0.22 + 0.08, 
         colorClass: colors[Math.floor(Math.random() * colors.length)],
-        yDrift: Math.random() * 80 - 40, 
-        xDrift: Math.random() * 80 - 40, 
+        yDrift: Math.random() * 100 - 50, 
+        xDrift: Math.random() * 100 - 50, 
         yTravel: Math.random() * 200 - 100,
         xTravel: Math.random() * 200 - 100,
-        rotDrift: baseRotation + (Math.random() * 90 - 45), 
-        // Parallax depth multiplier
-        parallaxX: Math.random() * 60 - 30,
-        parallaxY: Math.random() * 60 - 30,
+        rotDrift: baseRotation + (Math.random() * 120 - 60), 
+        parallaxX: Math.random() * 70 - 35,
+        parallaxY: Math.random() * 70 - 35,
+        blur: Math.random() > 0.5 ? Math.random() * 2.5 : 0, 
       };
     });
     
@@ -129,16 +134,9 @@ export function AestheticDoodles() {
   if (doodles.length === 0) return null;
 
   return (
-    <div 
-      className="absolute inset-0 overflow-hidden pointer-events-none z-0"
-      style={{
-        // Creates a smooth fade-out hole in the center to protect the text
-        maskImage: "radial-gradient(ellipse 60% 45% at 50% 50%, transparent 35%, black 70%)",
-        WebkitMaskImage: "radial-gradient(ellipse 60% 45% at 50% 50%, transparent 35%, black 70%)",
-      }}
-    >
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 doodle-mask">
       {doodles.map((d) => (
-        <DoodleItem key={d.id} d={d} mouseX={smoothX} mouseY={smoothY} />
+        <DoodleItem key={d.id} d={d} mouseX={smoothX} mouseY={smoothY} blur={d.blur} />
       ))}
     </div>
   );

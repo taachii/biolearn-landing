@@ -232,6 +232,20 @@ html[data-theme="light"] .light-dots {
   display: block;
 }
 
+/* Doodle mask to protect text */
+.doodle-mask {
+  /* Desktop: horizontal ellipse */
+  mask-image: radial-gradient(ellipse 60% 45% at 50% 50%, transparent 35%, black 70%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 45% at 50% 50%, transparent 35%, black 70%);
+}
+@media (max-width: 768px) {
+  .doodle-mask {
+    /* Mobile: taller ellipse to protect stacked text */
+    mask-image: radial-gradient(ellipse 95% 75% at 50% 50%, transparent 40%, black 80%);
+    -webkit-mask-image: radial-gradient(ellipse 95% 75% at 50% 50%, transparent 40%, black 80%);
+  }
+}
+
 /* Floating Biology 3D assets blending */
 .bio-blend {
   mix-blend-mode: screen; /* Drops pure black background, keeps glowing colors */
