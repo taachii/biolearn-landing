@@ -79,11 +79,7 @@ export function HeroSection() {
           {/* ══ LEFT: Content ════════════════════════════════ */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
 
-            {/* H1 */}
-            <AnimateIn animation="fade-up" delay={160}>
-              <h1
-                id="hero-heading"
-                className="font-display font-bold leading-[1.08] tracking-tight text-[var(--color-text-primary)]"
+            {/* H1 & Text */}
             <AnimateIn animation="fade-right">
               <div className="inline-block py-1.5 px-3 rounded-full bg-[var(--color-accent-muted)] text-[var(--color-accent)] text-xs sm:text-sm font-semibold mb-6 border border-[rgba(0,230,118,0.20)] shadow-[var(--shadow-glow-accent)]">
                 🚀 Zapisy na przygotowania do Matury 2026
