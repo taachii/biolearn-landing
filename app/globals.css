@@ -68,6 +68,8 @@
   /* Pattern colors */
   --dot-color: rgba(255, 255, 255, 0.12);
   --hex-stroke: rgba(255, 255, 255, 0.03);
+
+  --doodle-opacity: 1; /* Default opacity multiplier */
 }
 
 /* ============================================================
@@ -116,6 +118,8 @@ html[data-theme="light"] {
   /* Pattern colors */
   --dot-color:  rgba(15, 23, 42, 0.15);
   --hex-stroke: rgba(22, 163, 74, 0.12);
+
+  --doodle-opacity: 2.5; /* Boost doodle visibility in light mode */
 }
 
 /* ============================================================

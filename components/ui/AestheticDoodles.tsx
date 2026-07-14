@@ -42,7 +42,7 @@ function DoodleItem({ d, mouseX, mouseY }: { d: DoodleDef, mouseX: MotionValue<n
       style={{
         top: `${d.top}%`,
         left: `${d.left}%`,
-        opacity: d.opacity,
+        opacity: `calc(${d.opacity} * var(--doodle-opacity))`,
         x: xOffset,
         y: yOffset,
       }}
