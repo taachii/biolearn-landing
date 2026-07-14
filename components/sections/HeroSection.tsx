@@ -3,7 +3,6 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button }    from "@/components/ui/Button";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { DnaHelix }  from "@/components/ui/DnaHelix";
 
 export function HeroSection() {
   return (
@@ -43,29 +42,7 @@ export function HeroSection() {
         style={{ background: "radial-gradient(ellipse at 0% 100%, rgba(0,207,255,0.08) 0%, transparent 60%)" }}
       />
 
-      {/* ── Decorative vertical lines ────────────────────────── */}
-      <div aria-hidden="true" className="absolute inset-y-0 left-[15%] w-px bg-gradient-to-b from-transparent via-[var(--color-border)] to-transparent opacity-40 hidden xl:block" />
-      <div aria-hidden="true" className="absolute inset-y-0 right-[15%] w-px bg-gradient-to-b from-transparent via-[var(--color-border)] to-transparent opacity-40 hidden xl:block" />
 
-      {/* ── DNA Helices — symmetrical, animation on inner div ─ */}
-      {/* Left helix */}
-      <div
-        aria-hidden="true"
-        className="absolute top-0 bottom-0 left-[1%] hidden lg:flex items-center pointer-events-none"
-      >
-        <div style={{ animation: "dna-drift 12s ease-in-out infinite alternate" }}>
-          <DnaHelix height={520} width={80} turns={4} className="opacity-55" />
-        </div>
-      </div>
-      {/* Right helix */}
-      <div
-        aria-hidden="true"
-        className="absolute top-0 bottom-0 right-[1%] hidden lg:flex items-center pointer-events-none"
-      >
-        <div style={{ animation: "dna-drift 12s ease-in-out infinite alternate-reverse" }}>
-          <DnaHelix height={520} width={80} turns={4} className="opacity-55" />
-        </div>
-      </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
       <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-8">
