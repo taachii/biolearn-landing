@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Outfit, Caveat } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -11,7 +11,13 @@ const inter = Inter({
 
 const outfit = Outfit({
   variable: "--font-outfit",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
@@ -49,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="pl"
-      className={`${inter.variable} ${outfit.variable} ${geistMono.variable}`}
+      className={`${inter.variable} ${outfit.variable} ${geistMono.variable} ${caveat.variable}`}
       suppressHydrationWarning
     >
       <head>

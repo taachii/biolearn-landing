@@ -46,6 +46,12 @@ export function HeroSection() {
         style={{ background: "radial-gradient(ellipse at 0% 100%, rgba(0,207,255,0.08) 0%, transparent 60%)" }}
       />
 
+      {/* ── Fade to bottom for smooth transition ───────────────── */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none z-10"
+        style={{ background: "linear-gradient(to top, var(--color-bg-base) 0%, transparent 100%)" }}
+      />
+
 
 
       {/* ── Content ─────────────────────────────────────────────── */}
@@ -68,7 +74,9 @@ export function HeroSection() {
               style={{ fontSize: "clamp(2.8rem, 6vw + 0.8rem, 5.5rem)", lineHeight: 1.05 }}
             >
               Zacznij ją{" "}
-              <span className="text-neon-green">rozumieć!</span>
+              <span className="text-neon-green font-handwriting font-normal italic tracking-normal" style={{ fontSize: "1.25em" }}>
+                rozumieć!
+              </span>
             </span>
           </h1>
         </AnimateIn>
