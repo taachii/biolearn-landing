@@ -175,6 +175,16 @@ html[data-theme="light"] .glass {
   background: rgba(255, 255, 255, 0.82);
 }
 
+/* Dark photo card background that lightens slightly in light mode */
+.photo-card-bg {
+  background-color: #121214;
+  border-color: #27272a;
+}
+html[data-theme="light"] .photo-card-bg {
+  background-color: #27272a; /* Lighter dark gray for less harsh contrast */
+  border-color: #3f3f46;
+}
+
 /* Neon text — dark only */
 .text-neon-green {
   color: var(--color-accent);
