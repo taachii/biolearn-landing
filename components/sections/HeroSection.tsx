@@ -74,7 +74,7 @@ export function HeroSection() {
               style={{ fontSize: "clamp(2.8rem, 6vw + 0.8rem, 5.5rem)", lineHeight: 1.05 }}
             >
               Zacznij ją{" "}
-              <span className="text-neon-green font-handwriting font-normal italic tracking-normal" style={{ fontSize: "1.25em" }}>
+              <span className="text-neon-green font-playfair font-normal italic tracking-normal" style={{ fontSize: "1.15em" }}>
                 rozumieć!
               </span>
             </span>
