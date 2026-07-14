@@ -92,11 +92,12 @@ export function HeroSection() {
 
         {/* CTAs */}
         <AnimateIn animation="fade-up" delay={280}>
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+          <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto justify-center">
             <Button
               id="hero-cta-primary"
               size="lg"
               variant="primary"
+              className="w-full md:w-auto"
               onClick={() =>
                 document.getElementById("rezerwacja")?.scrollIntoView({ behavior: "smooth" })
               }
@@ -108,6 +109,7 @@ export function HeroSection() {
               id="hero-cta-secondary"
               size="lg"
               variant="secondary"
+              className="w-full md:w-auto"
               onClick={() =>
                 document.getElementById("kim-jestem")?.scrollIntoView({ behavior: "smooth" })
               }

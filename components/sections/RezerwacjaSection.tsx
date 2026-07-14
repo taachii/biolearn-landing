@@ -33,11 +33,11 @@ export function RezerwacjaSection({ id }: RezerwacjaSectionProps) {
           </p>
           
           {/* Placeholder for Calendly or a simple button */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" variant="primary" className="shadow-[var(--shadow-glow-cyan)] border-transparent">
+          <div className="flex flex-col md:flex-row justify-center gap-4 w-full">
+            <Button size="lg" variant="primary" className="shadow-[var(--shadow-glow-cyan)] border-transparent w-full md:w-auto">
               Zarezerwuj termin w Calendly
             </Button>
-            <Button size="lg" variant="secondary" onClick={() => document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })}>
+            <Button size="lg" variant="secondary" className="w-full md:w-auto" onClick={() => document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })}>
               Zadaj pytanie e-mailem
             </Button>
           </div>
