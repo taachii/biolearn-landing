@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-dvh flex flex-col justify-center items-center text-center pt-28 pb-20 px-6 sm:px-8 overflow-hidden"
+      className="relative min-h-dvh flex flex-col justify-center items-center text-center pt-28 pb-20 px-8 sm:px-10 lg:px-12 overflow-hidden"
     >
       {/* ── Aesthetic Biology Doodles ────────────────────────── */}
       <AestheticDoodles />

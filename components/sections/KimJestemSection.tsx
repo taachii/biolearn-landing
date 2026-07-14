@@ -17,7 +17,7 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
   return (
     <section
       id={id}
-      className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-10 overflow-hidden"
+      className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12 overflow-hidden"
     >
       {/* subtle ambient */}
       <div

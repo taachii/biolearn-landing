@@ -35,7 +35,7 @@ const TIMELINE = [
 
 export function HistoriaSection({ id }: HistoriaSectionProps) {
   return (
-    <section id={id} className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12 overflow-hidden">
       {/* Background ambient */}
       <div
         aria-hidden="true"

@@ -29,7 +29,7 @@ const FEATURES = [
 
 export function MetodaSection({ id }: MetodaSectionProps) {
   return (
-    <section id={id} className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
+    <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12">
       <div className="relative max-w-7xl mx-auto">
         <AnimateIn animation="fade-up" className="text-center mb-16 sm:mb-24">
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
