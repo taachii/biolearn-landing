@@ -108,10 +108,9 @@ export function Navbar() {
         role="banner"
         className={cn(
           "fixed top-0 left-0 right-0 z-50",
+          "glass border-b border-[var(--color-border)]",
           "transition-all duration-[var(--duration-slow)] ease-[var(--ease-out-expo)]",
-          isScrolled
-            ? "glass border-b border-[var(--color-border)] py-3"
-            : "bg-transparent py-5"
+          isScrolled ? "py-3" : "py-4"
         )}
       >
         <nav
