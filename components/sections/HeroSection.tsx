@@ -21,29 +21,29 @@ const STATS = [
   {
     id:    "stat-score",
     icon:  TrendingUp,
-    value: "90%",
-    label: "Wynik na maturze rozszerzonej",
+    value: "90%+",
+    label: "Twój cel na Maturze 2026",
     accent: "green",
   },
   {
     id:    "stat-centyl",
     icon:  Award,
     value: "100.",
-    label: "centyl wśród maturzystów",
+    label: "centyl — nasz wspólny target",
     accent: "green",
   },
   {
     id:    "stat-time",
     icon:  Clock,
     value: "9",
-    label: "miesięcy nauki od zera",
+    label: "miesięcy usystematyzowanej nauki",
     accent: "cyan",
   },
   {
     id:    "stat-start",
     icon:  Target,
     value: "0",
-    label: "wcześniejszej wiedzy z biologii",
+    label: "wymaganej wiedzy z biologii na start",
     accent: "cyan",
   },
 ] as const;
@@ -84,31 +84,16 @@ export function HeroSection() {
               <h1
                 id="hero-heading"
                 className="font-display font-bold leading-[1.08] tracking-tight text-[var(--color-text-primary)]"
-                style={{ fontSize: "clamp(2.4rem, 4.5vw + 0.8rem, 4.2rem)" }}
-              >
-                Zrozum biologię tak,{" "}
-                <br className="hidden sm:block" />
-                jak rozumie ją{" "}
-                <span className="gradient-text">przyszły lekarz</span>
+            <AnimateIn animation="fade-right">
+              <div className="inline-block py-1.5 px-3 rounded-full bg-[var(--color-accent-muted)] text-[var(--color-accent)] text-xs sm:text-sm font-semibold mb-6 border border-[rgba(0,230,118,0.20)] shadow-[var(--shadow-glow-accent)]">
+                🚀 Zapisy na przygotowania do Matury 2026
+              </div>
+              <h1 id="hero-heading" className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+                Systemowe podejście do biologii. <br />
+                Klucz do <span className="text-neon-green">wysokiego wyniku</span>
               </h1>
-            </AnimateIn>
-
-            {/* Sub-headline */}
-            <AnimateIn animation="fade-up" delay={240}>
-              <p
-                className="max-w-xl text-[var(--color-text-secondary)] leading-relaxed"
-                style={{ fontSize: "clamp(1rem, 1.2vw + 0.5rem, 1.2rem)" }}
-              >
-                Nie uczę zakuwania. Uczę{" "}
-                <strong className="text-[var(--color-text-primary)] font-semibold">
-                  rozumienia mechanizmów
-                </strong>{" "}
-                — dokładnie tak, jak sam opanowałem całą biologię od zera i zdałem
-                maturę rozszerzoną na{" "}
-                <strong className="text-neon-green font-semibold">90%</strong> w ciągu{" "}
-                <strong className="text-[var(--color-text-primary)] font-semibold">
-                  9 miesięcy
-                </strong>.
+              <p className="text-lg sm:text-xl text-[var(--color-text-secondary)] mb-10 max-w-2xl leading-relaxed">
+                Biologia to nie nauka na pamięć, to system naczyń połączonych. Opanowałem go od zera i zdałem maturę rozszerzoną na 90% w 9 miesięcy. Nauczę Cię logicznego myślenia, które wpasowuje się w klucz CKE.
               </p>
             </AnimateIn>
 
