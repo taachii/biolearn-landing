@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { MonitorPlay, Key, Video, BrainCircuit, MessageCircle } from "lucide-react";
+import { MonitorPlay, Key, Video, BrainCircuit, MessageCircle, FileText } from "lucide-react";
 
 interface OfertaSectionProps {
   id?: string;
@@ -26,16 +26,22 @@ const OFERTA = [
     cols: "lg:col-span-2"
   },
   {
+    title: "Autorskie notatki",
+    description: "Zapomnij o dziesiątkach repetytoriów. Otrzymujesz moje autorskie notatki i schematy, wyselekcjonowane prosto pod wymagania maturalne.",
+    icon: FileText,
+    cols: "lg:col-span-2"
+  },
+  {
     title: "Quizy i fiszki po lekcji",
     description: "Po każdych zajęciach otrzymujesz wyselekcjonowany quiz sprawdzający wiedzę oraz interaktywne fiszki do szybkich powtórek w drodze do szkoły.",
     icon: BrainCircuit,
-    cols: "lg:col-span-3"
+    cols: "lg:col-span-2"
   },
   {
-    title: "Ciągły kontakt na Discord/Messenger",
+    title: "Ciągły kontakt na Discord",
     description: "Zaciąłeś się przy trudnym zadaniu? Piszesz do mnie i rozbrajamy problem od ręki, bez czekania na kolejną lekcję.",
     icon: MessageCircle,
-    cols: "lg:col-span-3"
+    cols: "lg:col-span-2"
   }
 ];
 
