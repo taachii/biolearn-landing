@@ -38,13 +38,13 @@ export function KontaktSection({ id }: KontaktSectionProps) {
               <h3 className="font-bold text-[var(--color-text-primary)] mb-4 uppercase tracking-widest text-xs">Kontakt</h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="mailto:naukazadamem@gmail.com" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-cyan)] transition-colors focus-ring rounded p-1 -ml-1">
+                  <a href="mailto:naukazadamem@gmail.com" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors focus-ring rounded p-1 -ml-1">
                     <Mail size={16} />
                     <span>naukazadamem@gmail.com</span>
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+48690011300" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-cyan)] transition-colors focus-ring rounded p-1 -ml-1">
+                  <a href="tel:+48690011300" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors focus-ring rounded p-1 -ml-1">
                     <Phone size={16} />
                     <span>+48 690 011 300</span>
                   </a>
@@ -63,13 +63,13 @@ export function KontaktSection({ id }: KontaktSectionProps) {
               <h3 className="font-bold text-[var(--color-text-primary)] mb-4 uppercase tracking-widest text-xs">Social Media</h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-cyan)] transition-colors focus-ring rounded p-1 -ml-1">
+                  <a href="#" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors focus-ring rounded p-1 -ml-1">
                     <InstagramIcon size={16} />
                     <span>Instagram</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-cyan)] transition-colors focus-ring rounded p-1 -ml-1">
+                  <a href="#" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors focus-ring rounded p-1 -ml-1">
                     <TikTokIcon size={16} />
                     <span>TikTok</span>
                   </a>
