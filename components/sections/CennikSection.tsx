@@ -79,7 +79,7 @@ export function CennikSection({ id }: CennikSectionProps) {
                 
                 {pkg.isPopular && (
                   <div className="absolute top-0 left-0 right-0 py-1.5 bg-[#00FF66] text-black text-xs font-bold text-center uppercase tracking-widest">
-                    Najczęściej wybierane
+                    Najbardziej opłacalne
                   </div>
                 )}
                 
