@@ -45,7 +45,7 @@ export function Navbar() {
       }
       
       // Detect if we are at the bottom of the page
-      setIsAtBottom(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50);
+      setIsAtBottom(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
