@@ -167,7 +167,7 @@ export function Navbar() {
                       "transition-colors duration-[var(--duration-fast)]",
                       "focus-ring animated-underline",
                       isActive
-                        ? getSectionTheme(sectionId) === "cyan" ? "text-[var(--color-cyan)] drop-shadow-[0_0_8px_rgba(0,207,255,0.4)]" : "text-[var(--color-accent)] drop-shadow-[0_0_8px_rgba(0,255,102,0.4)]"
+                        ? getSectionTheme(sectionId) === "cyan" ? "text-neon-cyan" : "text-neon-green"
                         : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                     )}
                   >
@@ -290,8 +290,8 @@ export function Navbar() {
                       "transition-all duration-[var(--duration-fast)] focus-ring",
                       isActive
                         ? getSectionTheme(sectionId) === "cyan"
-                          ? "bg-[rgba(0,207,255,0.05)] text-[var(--color-cyan)] border border-[rgba(0,207,255,0.20)]"
-                          : "bg-[var(--color-accent-muted)] text-[var(--color-accent)] border border-[rgba(0,230,118,0.20)]"
+                          ? "bg-[var(--color-cyan-muted)] text-[var(--color-cyan)] border border-[var(--color-cyan-glow)]"
+                          : "bg-[var(--color-accent-muted)] text-[var(--color-accent)] border border-[var(--color-accent-glow)]"
                         : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-elevated)]"
                     )}
                   >
