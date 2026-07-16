@@ -45,7 +45,7 @@ const PACKAGES = [
     price: "320",
     period: "/ miesiąc",
     pricePerLesson: "(80 PLN / lekcja)",
-    description: "Ekskluzywne prowadzenie 1:1 do samej matury. Ja narzucam tempo i układam plan, a Ty po prostu robisz postępy.",
+    description: "Ekskluzywne prowadzenie 1:1 do samej matury. Zdejmuję z Ciebie ciężar planowania – dostajesz gotową strategię, a Twoim jedynym zadaniem jest konsekwentna nauka.",
     features: [
       "4 spotkania 1:1 w miesiącu o stałej porze",
       "Indywidualnie skrojony plan nauki",
