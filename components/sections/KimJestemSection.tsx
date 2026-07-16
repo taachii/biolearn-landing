@@ -64,10 +64,11 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
 
               {/* Progress illustration under the photo */}
               <div className="w-full mt-10 px-2 relative" aria-hidden="true">
-                {/* Curvy Arrow SVG */}
-                <svg viewBox="0 0 300 80" className="w-full h-auto overflow-visible">
+                {/* Exponential Curve SVG */}
+                <svg viewBox="0 0 300 90" className="w-full h-auto overflow-visible">
+                  {/* Curve */}
                   <path
-                    d="M 20 60 C 90 -10, 210 -10, 280 40"
+                    d="M 30 75 C 180 75, 230 65, 280 15"
                     fill="none"
                     stroke="var(--color-accent)"
                     strokeWidth="3"
@@ -76,7 +77,7 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
                   />
                   {/* Arrowhead */}
                   <path
-                    d="M 268 24 L 283 43 L 260 48"
+                    d="M 268 28 L 282 17 L 268 6"
                     fill="none"
                     stroke="var(--color-accent)"
                     strokeWidth="3"
@@ -85,8 +86,8 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
                     className="drop-shadow-[0_0_8px_rgba(0,230,118,0.4)]"
                   />
                   {/* Labels */}
-                  <text x="0" y="55" fill="var(--color-text-muted)" fontSize="16" fontWeight="700" className="font-mono">0%</text>
-                  <text x="250" y="15" fill="var(--color-accent)" fontSize="26" fontWeight="800" className="font-display drop-shadow-[0_0_10px_rgba(0,230,118,0.5)]">90%</text>
+                  <text x="0" y="72" fill="var(--color-text-muted)" fontSize="16" fontWeight="700" className="font-mono">0%</text>
+                  <text x="245" y="0" fill="var(--color-accent)" fontSize="26" fontWeight="800" className="font-display drop-shadow-[0_0_10px_rgba(0,230,118,0.5)]">90%</text>
                 </svg>
                 
                 {/* X-Axis for 9 months */}
