@@ -45,7 +45,7 @@ const PACKAGES = [
     price: "320",
     period: "/ miesiąc",
     pricePerLesson: "(80 PLN / lekcja)",
-    description: "Ekskluzywne prowadzenie 1:1 do samej matury. Zdejmuję z Ciebie ciężar planowania – dostajesz gotową strategię, a Twoim jedynym zadaniem jest konsekwentna nauka.",
+    description: "Ekskluzywne prowadzenie 1:1 do samej matury. Zdejmuję z Ciebie ciężar planowania, dostajesz gotową strategię, a Twoim jedynym zadaniem jest konsekwentna nauka.",
     features: [
       "4 spotkania 1:1 w miesiącu o stałej porze",
       "Indywidualnie skrojony plan nauki",
@@ -61,7 +61,7 @@ export function CennikSection({ id }: CennikSectionProps) {
   return (
     <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12">
       <div className="relative max-w-6xl mx-auto text-center">
-        <AnimateIn animation="fade-up" className="mb-24 max-w-2xl mx-auto">
+        <AnimateIn animation="fade-up" className="max-w-2xl mx-auto">
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             Prosty i <span className="text-neon-green">przejrzysty</span> cennik
           </h2>
@@ -70,7 +70,7 @@ export function CennikSection({ id }: CennikSectionProps) {
           </p>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch text-left">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch text-left">
           {PACKAGES.map((pkg, i) => (
             <AnimateIn key={i} animation="fade-up" delay={i * 150} className="h-full">
               <div className={cn(
