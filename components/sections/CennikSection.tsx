@@ -41,7 +41,7 @@ const PACKAGES = [
     isPopular: true
   },
   {
-    name: "Prowadzenie Indywidualne",
+    name: "Matura 2027 1:1",
     price: "320",
     period: "/ miesiąc",
     pricePerLesson: "(80 PLN / lekcja)",
