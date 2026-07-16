@@ -19,8 +19,8 @@ const FAQS = [
     answer: "Łączymy się poprzez Discord (lub inny komunikator na Twoje życzenie). Udostępniam ekran ze swojego iPada, z którego na bazie autorskich notatek omawiam dany temat. Pod koniec zajęć otrzymujesz dostęp do dedykowanego quizu i fiszek stworzonych specjalnie do przerabianego materiału."
   },
   {
-    question: "Jak zapisać się do grupy lub na Mentoring?",
-    answer: "Zgłoszenia na pakiety miesięczne przyjmuję mailowo lub telefonicznie (dane znajdziesz w sekcji Kontakt). Ustalimy wspólnie stały, dogodny termin, który zostanie z Tobą przypisany aż do samej matury."
+    question: "Jak zarezerwować miejsce w grupie lub zajęcia 1:1?",
+    answer: "Zgłoszenia na pakiety miesięczne przyjmuję mailowo lub telefonicznie (dane znajdziesz w sekcji Kontakt na dole strony). Wspólnie dobierzemy stały, dogodny termin w tygodniu, który zostanie zarezerwowany wyłącznie dla Ciebie aż do samej matury."
   },
   {
     question: "Co w przypadku, gdy opuszczę zajęcia w grupie?",
