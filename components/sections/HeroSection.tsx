@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { Button }    from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { AestheticDoodles } from "@/components/ui/AestheticDoodles";
 
@@ -35,7 +35,7 @@ export function HeroSection() {
       />
 
       {/* ── Fade to bottom for smooth transition ───────────────── */}
-      <div 
+      <div
         className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none z-10"
         style={{ background: "linear-gradient(to top, var(--color-bg-base) 0%, transparent 100%)" }}
       />
@@ -110,7 +110,7 @@ export function HeroSection() {
           <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-sm text-[var(--color-text-primary)] font-medium">
             <div className="flex items-center gap-2 glass px-4 py-2 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-card)]">
               <span className="text-[var(--color-accent)] font-bold text-lg leading-none mt-[-2px]">•</span>
-              <span>100% Online na Discordzie</span>
+              <span>100% Online</span>
             </div>
             <div className="flex items-center gap-2 glass px-4 py-2 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-card)]">
               <span className="text-[var(--color-accent)] font-bold text-lg leading-none mt-[-2px]">•</span>

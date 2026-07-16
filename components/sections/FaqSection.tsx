@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     question: "Jak wyglądają płatności i odwoływanie zajęć?",
-    answer: "Pakiety miesięczne opłacane są z góry (BLIK / Przelew). Zajęcia typu \"Pogotowie 1:1\" opłacasz przy rezerwacji terminu. Pojedyncze spotkania 1:1 możesz bezpłatnie odwołać lub przenieść maksymalnie do 24 godzin przed ich startem. Szanujmy swój czas!"
+    answer: "Pakiety miesięczne (grupa/indyw.) opłacane są z góry (BLIK/Przelew). Zajęcia typu \"Pogotowie 1:1\" opłacasz przy rezerwacji terminu. Pojedyncze spotkania 1:1 możesz bezpłatnie odwołać lub przenieść maksymalnie do 24 godzin przed ich startem. Szanujmy swój czas!"
   }
 ];
 
