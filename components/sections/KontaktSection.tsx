@@ -63,16 +63,18 @@ export function KontaktSection({ id }: KontaktSectionProps) {
               <h3 className="font-bold text-[var(--color-text-primary)] mb-4 uppercase tracking-widest text-xs">Social Media</h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors focus-ring rounded p-1 -ml-1">
+                  <div className="flex items-center gap-2 text-[var(--color-text-muted)] p-1 -ml-1 opacity-70">
                     <InstagramIcon size={16} />
                     <span>Instagram</span>
-                  </a>
+                    <span className="text-[9px] uppercase tracking-widest bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-[var(--color-text-secondary)] px-1.5 py-0.5 rounded ml-1 font-semibold">Wkrótce</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#" className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors focus-ring rounded p-1 -ml-1">
+                  <div className="flex items-center gap-2 text-[var(--color-text-muted)] p-1 -ml-1 opacity-70">
                     <TikTokIcon size={16} />
                     <span>TikTok</span>
-                  </a>
+                    <span className="text-[9px] uppercase tracking-widest bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-[var(--color-text-secondary)] px-1.5 py-0.5 rounded ml-1 font-semibold">Wkrótce</span>
+                  </div>
                 </li>
               </ul>
             </AnimateIn>
