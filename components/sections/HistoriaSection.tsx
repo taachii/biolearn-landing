@@ -9,26 +9,26 @@ interface HistoriaSectionProps {
 const TIMELINE = [
   {
     id: "start",
-    year: "Sierpień 2025",
-    title: "Rozpoczęcie nauki",
+    year: "Strategia",
+    title: "Optymalizacja nauki",
     description:
-      "Nie miałem wcześniej pojęcia o biologii. Wiedziałem tylko, że muszę się jej nauczyć od podstaw i osiągnąć topowy wynik. Zrozumiałem, że standardowe zakuwanie z podręczników będzie bezcelowe.",
+      "Od początku wiedziałem, że ilość materiału do opanowania z tego przedmiotu jest wręcz kolosalna, dlatego byłem świadomy tego, że do nauki muszę podejść z głową i odpowiednią strategią. Wraz z upływem kolejnych tygodni, zacząłem zauważać jakie metody nauki się sprawdzają, a które tylko niepotrzebnie marnują mój cenny czas, dzięki czemu byłem w stanie cały czas optymalizować sposób przygotowań.",
     icon: BookOpen,
   },
   {
     id: "proces",
-    year: "Styczeń 2026",
-    title: "Przejście na arkusze",
+    year: "Zrozumienie",
+    title: "Ciekawość zamiast regułek",
     description:
-      "Zakończyłem przerabianie teorii. Zamiast uczyć się definicji na pamięć, zacząłem szukać połączeń przyczynowo-skutkowych. Odkryłem, jak czytać klucz maturalny i trenowałem wyłącznie na autentycznych zadaniach CKE.",
+      "Nauka na pamięć nigdy nie była w moim stylu, a uczenie się o jakimś zjawisku na zasadzie X powoduje Y \"bo tak\" absolutnie nie wchodziła u mnie w grę. Chciałem wiedzieć i rozumieć jak najwięcej, dlatego dociekałem i wchodziłem coraz głębiej w temat. Uważam, że to właśnie ta ciekawość i chęć zrozumienia biologii jako całości najbardziej przyczyniła się do mojego wyniku.",
     icon: BrainCircuit,
   },
   {
     id: "wynik",
-    year: "Lipiec 2026",
-    title: "Rekrutacja na medycynę",
+    year: "Pamięć vs Logika",
+    title: "Interakcje, nie tylko nazwy",
     description:
-      "Z 90% i 100. centylem na świadectwie maturalnym, drzwi na uczelnie medyczne stanęły otworem. Dowiodłem, że zoptymalizowana praca własna daje wielokrotnie lepsze efekty niż lata bezmyślnego kucia.",
+      "Nie twierdzę, że w biologii nie ma pamięciówki, bo owszem - jest. Nie da się przeskoczyć nauki nazewnictwa poszczególnych struktur u roślin, czy hormonów u człowieka, ale jest ogromna różnica między wiedzą, że coś się jakoś nazywa, a wiedzą w jaki sposób \"to coś\" wchodzi w interakcję z innymi \"cosiami\" :D",
     icon: Target,
   },
 ];

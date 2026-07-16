@@ -82,11 +82,9 @@ export function HeroSection() {
         {/* Sub */}
         <AnimateIn animation="fade-up" delay={150}>
           <p className="max-w-xl text-base sm:text-lg text-[var(--color-text-secondary)] leading-relaxed">
-            Biologia to nie encyklopedia — to system naczyń połączonych.{" "}
-            Opanowałem go od zera i zdałem maturę rozszerzoną na{" "}
-            <strong className="text-[var(--color-text-primary)]">90%</strong> w{" "}
-            <strong className="text-[var(--color-text-primary)]">9 miesięcy</strong>.
-            Nauczę Cię logicznego myślenia, które wpasowuje się w klucz CKE.
+            Samo wkuwanie definicji na pamięć to ślepy zaułek. Biologia to sztuka łączenia kropek, którą pomogę Ci opanować. Wyjaśnię Ci każdy temat w prosty i logiczny sposób, nauczę pisania pod klucz i zarażę pasją do biologii. Zbuduj fundament, który pozwolił mi zdobyć{" "}
+            <strong className="text-[var(--color-text-primary)]">90%</strong> na maturze w{" "}
+            <strong className="text-[var(--color-text-primary)]">9 miesięcy</strong> od zera.
           </p>
         </AnimateIn>
 

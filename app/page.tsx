@@ -43,7 +43,6 @@ export default function HomePage() {
         <SectionDivider variant="wave" />
         <RezerwacjaSection id="rezerwacja"/>
 
-        <SectionDivider variant="diagonal" flip />
         <KontaktSection    id="kontakt"   />
 
       </main>

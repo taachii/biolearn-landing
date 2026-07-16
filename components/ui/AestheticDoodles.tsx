@@ -1,12 +1,12 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform, MotionValue } from "framer-motion";
-import { Dna, Hexagon, Leaf, Atom, Microscope, Beaker, Brain, Activity, TestTubes, Syringe, Bug, Droplet } from "lucide-react";
+import { Dna, Leaf, Atom, Microscope, Brain, TestTubes, Syringe, Bug, Droplet, Bone, PawPrint, Flower2, Sprout, HeartPulse, Snail, Worm, Pill, FlaskConical } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 // Removed Sparkles, added Droplet
-const ICONS = [Dna, Hexagon, Leaf, Atom, Microscope, Beaker, Brain, Activity, TestTubes, Syringe, Bug, Droplet];
+const ICONS = [Dna, Leaf, Atom, Microscope, Brain, TestTubes, Syringe, Bug, Droplet, Bone, PawPrint, Flower2, Sprout, HeartPulse, Snail, Worm, Pill, FlaskConical];
 
 interface DoodleDef {
   id: number;
@@ -99,18 +99,50 @@ export function AestheticDoodles() {
     // Generate positions strictly on client to avoid Next.js hydration mismatch
     const colors = ["text-neon-green", "text-neon-cyan", "text-[var(--color-text-muted)]", "text-[var(--color-text-secondary)]"];
     
-    // Less doodles and smaller sizes on mobile to prevent clutter
     const isMobile = window.innerWidth < 768;
-    const count = isMobile ? 20 : 55;
     
-    const newDoodles = Array.from({ length: count }).map((_, i) => {
+    // Grid settings to distribute icons evenly without overlapping
+    const cols = isMobile ? 4 : 10;
+    const rows = isMobile ? 8 : 8;
+    
+    // Define the "center" zone to exclude (where the hero text/CTA is)
+    const excludedCols = isMobile ? [1, 2] : [2, 3, 4, 5, 6, 7];
+    const excludedRows = isMobile ? [2, 3, 4, 5] : [2, 3, 4, 5];
+
+    // Collect all valid cells
+    const validCells: {c: number, r: number}[] = [];
+    for (let c = 0; c < cols; c++) {
+      for (let r = 0; r < rows; r++) {
+        if (!(excludedCols.includes(c) && excludedRows.includes(r))) {
+          validCells.push({ c, r });
+        }
+      }
+    }
+
+    // Shuffle valid cells to pick random ones
+    const shuffledCells = validCells.sort(() => Math.random() - 0.5);
+    
+    // Determine how many icons we can/should place
+    const maxIcons = isMobile ? 15 : 45;
+    const count = Math.min(maxIcons, shuffledCells.length);
+    const selectedCells = shuffledCells.slice(0, count);
+
+    const newDoodles = selectedCells.map((cell, i) => {
+      const cellWidth = 100 / cols;
+      const cellHeight = 100 / rows;
+      
+      // Jitter (randomness) within the cell, but keeping away from edges (15% to 85% of cell width)
+      const jitterX = (Math.random() * 0.7 + 0.15) * cellWidth;
+      const jitterY = (Math.random() * 0.7 + 0.15) * cellHeight;
+
       const baseRotation = Math.floor(Math.random() * 360);
+      
       return {
         id: i,
         Icon: ICONS[Math.floor(Math.random() * ICONS.length)],
-        top: Math.random() * 100, 
-        left: Math.random() * 100, 
-        size: isMobile ? Math.floor(Math.random() * 20) + 16 : Math.floor(Math.random() * 40) + 16, 
+        top: cell.r * cellHeight + jitterY, 
+        left: cell.c * cellWidth + jitterX, 
+        size: isMobile ? Math.floor(Math.random() * 24) + 24 : Math.floor(Math.random() * 48) + 24, 
         rotation: baseRotation,
         duration: Math.random() * 25 + 25, 
         travelDuration: Math.random() * 60 + 60, 
@@ -119,12 +151,12 @@ export function AestheticDoodles() {
         colorClass: colors[Math.floor(Math.random() * colors.length)],
         yDrift: Math.random() * 100 - 50, 
         xDrift: Math.random() * 100 - 50, 
-        yTravel: Math.random() * 200 - 100,
-        xTravel: Math.random() * 200 - 100,
+        yTravel: Math.random() * 150 - 75, // Reduced travel distance to prevent crossing too much into the center
+        xTravel: Math.random() * 150 - 75,
         rotDrift: baseRotation + (Math.random() * 120 - 60), 
         parallaxX: Math.random() * 70 - 35,
         parallaxY: Math.random() * 70 - 35,
-        blur: Math.random() > 0.5 ? Math.random() * 2.5 : 0, 
+        blur: 0, 
       };
     });
     

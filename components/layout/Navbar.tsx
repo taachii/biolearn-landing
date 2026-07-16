@@ -11,7 +11,7 @@
  */
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Menu, X, Dna } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -121,23 +121,14 @@ export function Navbar() {
           <a
             href="#"
             aria-label="Strona główna — Korepetytor Biologii"
-            className="flex items-center gap-2.5 group focus-ring rounded-[var(--radius-md)]"
+            className="flex items-center group focus-ring rounded-[var(--radius-md)]"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <span
-              className={cn(
-                "flex items-center justify-center w-9 h-9 rounded-[var(--radius-md)]",
-                "bg-[var(--color-accent-muted)] border border-[rgba(0,230,118,0.30)]",
-                "group-hover:shadow-[var(--shadow-glow-accent)] transition-shadow duration-[var(--duration-normal)]"
-              )}
-            >
-              <Dna size={18} className="text-[var(--color-accent)]" />
-            </span>
-            <span className="font-display font-semibold text-[var(--color-text-primary)] leading-tight hidden sm:block">
-              bio<span className="text-neon-green">learn</span>
+            <span className="font-display font-bold text-2xl tracking-tight text-[var(--color-text-primary)] leading-none hidden sm:block">
+              biolka<span className="text-neon-green">z</span>adamem
             </span>
           </a>
 
@@ -240,8 +231,8 @@ export function Navbar() {
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--color-border-subtle)]">
-          <span className="font-display font-semibold text-[var(--color-text-primary)]">
-            bio<span className="text-neon-green">learn</span>
+          <span className="font-display font-bold text-xl tracking-tight text-[var(--color-text-primary)]">
+            biolka<span className="text-neon-green">z</span>adamem
           </span>
           <button
             type="button"
