@@ -107,13 +107,9 @@ export function HistoriaSection({ id }: HistoriaSectionProps) {
     <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12 overflow-hidden">
       <div className="relative max-w-5xl mx-auto">
         <AnimateIn animation="fade-up" className="text-center mb-16">
-          <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight">
             Jak to <span className="text-neon-green">osiągnąłem?</span>
           </h2>
-          <p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-            Moja droga nie była standardowa. Zamiast spędzać lata na ślęczeniu nad książkami, 
-            podszedłem do tematu analitycznie.
-          </p>
         </AnimateIn>
 
         <div className="relative">
