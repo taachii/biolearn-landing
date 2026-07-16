@@ -41,7 +41,7 @@ const PACKAGES = [
     isPopular: true
   },
   {
-    name: "Mentoring Maturalny 2027",
+    name: "Matura 2027 (1:1)",
     price: "320",
     period: "/ miesiąc",
     pricePerLesson: "(80 PLN / lekcja)",
