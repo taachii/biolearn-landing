@@ -8,8 +8,8 @@ interface OfertaSectionProps {
 
 const OFERTA = [
   {
-    title: "Indywidualne lekcje 1:1",
-    description: "Pełne 60 minut w 100% online na Discordzie. Tłumaczę do skutku, używając wirtualnej tablicy (iPad) i metafor, aż zapali się 'żarówka'.",
+    title: "Interaktywne lekcje online",
+    description: "Pełne 60 minut zajęć na Discordzie. Tłumaczę do skutku, udostępniając mój ekran z iPada i rysując schematy na żywo, aż zapali się 'żarówka'.",
     icon: MonitorPlay,
     cols: "lg:col-span-2"
   },

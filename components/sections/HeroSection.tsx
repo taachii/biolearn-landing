@@ -114,11 +114,11 @@ export function HeroSection() {
             </div>
             <div className="flex items-center gap-2 glass px-4 py-2 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-card)]">
               <span className="text-[var(--color-accent)] font-bold text-lg leading-none mt-[-2px]">•</span>
-              <span>Wirtualna tablica (iPad)</span>
+              <span>Ekran iPada na żywo</span>
             </div>
             <div className="flex items-center gap-2 glass px-4 py-2 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-card)]">
               <span className="text-[var(--color-accent)] font-bold text-lg leading-none mt-[-2px]">•</span>
-              <span>Indywidualnie 1:1</span>
+              <span>Nauka pod klucz CKE</span>
             </div>
           </div>
         </AnimateIn>
