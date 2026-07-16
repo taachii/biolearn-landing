@@ -39,9 +39,9 @@ const TIMELINE = [
 
 function TimelineItem({ item, index }: { item: typeof TIMELINE[0], index: number }) {
   const ref = useRef(null);
-  // Using -45% top and bottom margins creates a small 10% trigger zone in the exact middle of the screen.
-  // Because the timeline items are tall and have gaps, only one item can be in this 10% zone at a time, ensuring mutual exclusivity.
-  const isInView = useInView(ref, { margin: "-45% 0px -45% 0px" });
+  // Using -50% top and -49% bottom margins creates a 1% trigger zone exactly in the middle of the screen.
+  // This guarantees that the gap between items (which is much larger than 1% of viewport) prevents two items from ever intersecting this line at the same time.
+  const isInView = useInView(ref, { margin: "-50% 0px -49% 0px" });
   const isEven = index % 2 === 0;
   const Icon = item.icon;
 
