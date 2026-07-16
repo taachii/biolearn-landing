@@ -44,7 +44,7 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
 
           {/* ── RIGHT: Photo ─────────────────────────────────── */}
           <AnimateIn animation="fade-left" delay={200} className="flex justify-center lg:justify-end h-full">
-            <div className="relative w-full max-w-[340px] sm:max-w-[400px] flex flex-col justify-between h-full">
+            <div className="relative w-full max-w-[340px] sm:max-w-[400px] flex flex-col justify-between h-full lg:pt-[72px]">
               {/* Photo card */}
               <div
                 className="relative aspect-[3/4] w-full rounded-[var(--radius-2xl)] overflow-hidden border shadow-[var(--shadow-card)] photo-card-bg transition-colors duration-300"
