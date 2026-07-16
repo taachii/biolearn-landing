@@ -14,7 +14,8 @@ const PACKAGES = [
     name: "Pogotowie ratunkowe 1:1",
     price: "100",
     period: "/ lekcja",
-    description: "Idealna opcja przed sprawdzianem czy kartkówką. Ty wybierasz temat, a ja skupiam się na rozwiązaniu bieżącego problemu.",
+    pricePerLesson: null,
+    description: "Idealna opcja przed sprawdzianem. Ty wybierasz temat, a my skupiamy się na rozwiązaniu bieżącego problemu.",
     features: [
       "Pełne 60 minut zajęć 1:1 online",
       "Omawiamy z góry wybrany przez Ciebie temat",
@@ -28,6 +29,7 @@ const PACKAGES = [
     name: "Grupa Maturalna 2027",
     price: "200",
     period: "/ miesiąc",
+    pricePerLesson: "(wychodzi 50 PLN / lekcję)",
     description: "Kameralna grupa (3-4 osoby). Przerabiamy materiał od A do Z według mojego rygorystycznego harmonogramu.",
     features: [
       "4 spotkania w miesiącu o stałej porze",
@@ -42,6 +44,7 @@ const PACKAGES = [
     name: "Prowadzenie Indywidualne",
     price: "320",
     period: "/ miesiąc",
+    pricePerLesson: "(wychodzi 80 PLN / lekcję)",
     description: "Ekskluzywne prowadzenie 1:1 do samej matury. Ja narzucam tempo i układam plan, a Ty po prostu robisz postępy.",
     features: [
       "4 spotkania 1:1 w miesiącu o stałej porze",
@@ -63,7 +66,7 @@ export function CennikSection({ id }: CennikSectionProps) {
             Prosty i <span className="text-neon-green">przejrzysty</span> cennik
           </h2>
           <p className="text-lg text-[var(--color-text-secondary)]">
-            Wybierz model współpracy, który najlepiej odpowiada Twoim potrzebom.
+            Wybierz model współpracy, który najlepiej odpowiada Twoim potrzebom. Bez ukrytych opłat i haczyków.
           </p>
         </AnimateIn>
 
@@ -87,14 +90,23 @@ export function CennikSection({ id }: CennikSectionProps) {
                   <h3 className="font-display text-2xl font-bold mb-2 text-[var(--color-text-primary)]">{pkg.name}</h3>
                   <p className="text-[var(--color-text-secondary)] text-sm mb-6 h-16">{pkg.description}</p>
 
-                  <div className="flex items-end gap-1 mb-8">
-                    <span className="font-display text-5xl font-bold text-[var(--color-text-primary)]">
-                      {pkg.price}
-                    </span>
-                    <span className="text-xl text-[var(--color-text-secondary)] font-medium mb-1">
-                      PLN
-                    </span>
-                    <span className="text-sm text-[var(--color-text-muted)] ml-1 mb-2">{pkg.period}</span>
+                  <div className="flex flex-col mb-8">
+                    <div className="flex items-end gap-1">
+                      <span className="font-display text-5xl font-bold text-[var(--color-text-primary)]">
+                        {pkg.price}
+                      </span>
+                      <span className="text-xl text-[var(--color-text-secondary)] font-medium mb-1">
+                        PLN
+                      </span>
+                      <span className="text-sm text-[var(--color-text-muted)] ml-1 mb-2">{pkg.period}</span>
+                    </div>
+                    {pkg.pricePerLesson ? (
+                      <span className="text-sm text-[#00FF66] font-medium mt-1">
+                        {pkg.pricePerLesson}
+                      </span>
+                    ) : (
+                      <div className="h-5 mt-1" />
+                    )}
                   </div>
 
                   <ul className="flex flex-col gap-4 mb-10 flex-grow">
