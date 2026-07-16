@@ -30,7 +30,7 @@ const PACKAGES = [
     price: "200",
     period: "/ miesiąc",
     pricePerLesson: "(50 PLN / lekcja)",
-    description: "Kameralna grupa (3-4 osoby). Przerabiamy materiał od A do Z według mojego rygorystycznego harmonogramu.",
+    description: "Kameralna grupa (3-4 osoby). Przerabiamy materiał od A do Z według wspólnie ustalonego harmonogramu.",
     features: [
       "4 spotkania w miesiącu o stałej porze",
       "Pełen ekosystem (quizy, fiszki, notatki)",
