@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { CheckCircle2, MessageCircle, FileText, BarChart, Key } from "lucide-react";
+import { MonitorPlay, Key, Video, BrainCircuit, MessageCircle } from "lucide-react";
 
 interface OfertaSectionProps {
   id?: string;
@@ -8,92 +8,76 @@ interface OfertaSectionProps {
 
 const OFERTA = [
   {
-    title: "Indywidualne lekcje 1:1 online",
-    description: "Pełne 60 minut skupione w 100% na Twoich brakach. Tłumaczę do skutku, używając metafor i schematów.",
-    icon: CheckCircle2,
+    title: "Indywidualne lekcje 1:1",
+    description: "Pełne 60 minut w 100% skupione na Twoich brakach. Tłumaczę do skutku, używając metafor i schematów, aż zapali się 'żarówka'.",
+    icon: MonitorPlay,
+    cols: "lg:col-span-2"
   },
   {
     title: "Rozbijanie klucza CKE",
-    description: "Analizujemy schematy oceniania na czynniki pierwsze. Nauczysz się pisać odpowiedzi, które w 100% wpasowują się w klucz egzaminatora.",
+    description: "Analizujemy schematy oceniania na czynniki pierwsze. Nauczysz się pisać odpowiedzi idealnie pod klucz.",
     icon: Key,
+    cols: "lg:col-span-2"
   },
   {
-    title: "Materiały z laboratorium",
-    description: "Dostajesz ode mnie autorskie notatki, schematy i fiszki, wyselekcjonowane specjalnie pod klucz CKE.",
-    icon: FileText,
+    title: "Nagrywane spotkania",
+    description: "Za Twoją zgodą nagrywam lekcje. Mając do nich dostęp, możesz wrócić do najtrudniejszych zagadnień w dowolnej chwili.",
+    icon: Video,
+    cols: "lg:col-span-2"
+  },
+  {
+    title: "Quizy i fiszki po lekcji",
+    description: "Po każdych zajęciach otrzymujesz wyselekcjonowany quiz sprawdzający wiedzę oraz interaktywne fiszki do szybkich powtórek w drodze do szkoły.",
+    icon: BrainCircuit,
+    cols: "lg:col-span-3"
   },
   {
     title: "Ciągły kontakt na Discord/Messenger",
-    description: "Zaciąłeś się przy zadaniu domowym? Piszesz do mnie i rozbrajamy problem razem, bez czekania na kolejną lekcję.",
+    description: "Zaciąłeś się przy trudnym zadaniu? Piszesz do mnie i rozbrajamy problem od ręki, bez czekania na kolejną lekcję.",
     icon: MessageCircle,
-  },
-  {
-    title: "Próbne diagnozy maturalne",
-    description: "Regularne sprawdzanie postępów na autorskich, trudnych arkuszach, żeby na maturze nic Cię nie zaskoczyło.",
-    icon: BarChart,
-  },
+    cols: "lg:col-span-3"
+  }
 ];
 
 export function OfertaSection({ id }: OfertaSectionProps) {
   return (
     <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12 overflow-hidden">
-      <div className="relative max-w-5xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          {/* Left: Text */}
-          <div>
-            <AnimateIn animation="fade-right">
-              <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-6">
-                Co wchodzi w skład <br />
-                <span className="text-neon-cyan">współpracy?</span>
-              </h2>
-              <p className="text-lg text-[var(--color-text-secondary)] mb-8">
-                Moim celem nie jest odklepanie godziny i wzięcie pieniędzy. Zależy mi na tym,
-                żebyś zrozumiał materiał i osiągnął wymarzony wynik na uczelnię medyczną.
-              </p>
-              
-              <ul className="flex flex-col gap-6">
-                {OFERTA.map((item, i) => (
-                  <AnimateIn key={i} animation="fade-right" delay={i * 100 + 200}>
-                    <li className="flex gap-4 group">
-                      <div className="shrink-0 mt-1">
-                        <item.icon size={24} className="text-[var(--color-cyan)] group-hover:scale-110 transition-transform" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-[var(--color-text-primary)] text-lg mb-1">{item.title}</h4>
-                        <p className="text-[var(--color-text-secondary)] leading-snug">{item.description}</p>
-                      </div>
-                    </li>
-                  </AnimateIn>
-                ))}
-              </ul>
-            </AnimateIn>
-          </div>
+      <div className="relative max-w-6xl mx-auto">
+        <AnimateIn animation="fade-up" className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-6">
+            Co wchodzi w skład <span className="text-neon-cyan">współpracy?</span>
+          </h2>
+          <p className="text-lg text-[var(--color-text-secondary)]">
+            Moim celem nie jest odklepanie godziny i wzięcie pieniędzy. Wybierając te zajęcia, zyskujesz pełen ekosystem nauki, który ma dowieźć Cię do upragnionego wyniku.
+          </p>
+        </AnimateIn>
 
-          {/* Right: Visual / Card */}
-          <AnimateIn animation="fade-left" delay={300} className="relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-cyan)] to-[var(--color-accent)] rounded-[var(--radius-2xl)] blur-2xl opacity-20" />
-            <div className="relative glass rounded-[var(--radius-2xl)] p-8 sm:p-10 border border-[var(--color-border)] shadow-[var(--shadow-card)]">
-              <div className="w-16 h-16 rounded-full bg-[var(--color-cyan-muted)] flex items-center justify-center mb-6">
-                <span className="text-3xl font-bold text-[var(--color-cyan)]">🔬</span>
-              </div>
-              <h3 className="text-2xl font-display font-bold mb-4">Pełen ekosystem nauki</h3>
-              <p className="text-[var(--color-text-secondary)] mb-6">
-                Wybierając zajęcia, nie płacisz za czas. Płacisz za transformację z ucznia zagubionego w gąszczu informacji w eksperta rozumiejącego biologię na poziomie medycznym.
-              </p>
-              <div className="flex -space-x-3">
-                {[1, 2, 3].map((_, i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-[var(--color-bg-card)] bg-[var(--color-bg-elevated)] flex items-center justify-center">
-                    <span className="text-xs">👤</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+          {OFERTA.map((item, i) => (
+            <AnimateIn 
+              key={i} 
+              animation="fade-up" 
+              delay={i * 100} 
+              className={cn("h-full", item.cols)}
+            >
+              <div className="glass h-full rounded-[var(--radius-xl)] p-8 border border-[var(--color-border-subtle)] hover:border-[var(--color-cyan)] transition-colors duration-500 group relative overflow-hidden">
+                {/* Subtle hover gradient inside card */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-cyan-muted)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-[var(--shadow-glow-cyan)] text-[var(--color-cyan)]">
+                    <item.icon size={28} />
                   </div>
-                ))}
-                <div className="w-10 h-10 rounded-full border-2 border-[var(--color-bg-card)] bg-[var(--color-bg-elevated)] flex items-center justify-center">
-                  <span className="text-[10px] font-bold text-[var(--color-text-muted)]">+90%</span>
+                  <h3 className="font-bold font-display text-[var(--color-text-primary)] text-xl mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-[var(--color-text-secondary)] leading-relaxed text-sm">
+                    {item.description}
+                  </p>
                 </div>
               </div>
-            </div>
-          </AnimateIn>
-
+            </AnimateIn>
+          ))}
         </div>
       </div>
     </section>
