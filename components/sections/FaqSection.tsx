@@ -15,8 +15,8 @@ const FAQS = [
     answer: "Nie. Otrzymujesz ode mnie kompletny ekosystem nauki: autorskie notatki, fiszki i wyselekcjonowane schematy. Wystarczy Ci dostęp do internetu, chęci do nauki i Discord."
   },
   {
-    question: "Jak technicznie wyglądają zajęcia online?",
-    answer: "Łączymy się na prywatnym serwerze Discord. Udostępniam ekran ze swojego iPada, na którym na żywo rozrysowuję schematy i tłumaczę zagadnienia. Ty w 100% skupiasz się na przyswajaniu wiedzy. Nie musisz nawet mieć włączonej kamerki."
+    question: "Jak od strony technicznej wyglądają zajęcia?",
+    answer: "Łączymy się poprzez Discord (lub inny komunikator na Twoje życzenie). Udostępniam ekran ze swojego iPada, z którego na bazie autorskich notatek omawiam dany temat. Pod koniec zajęć otrzymujesz dostęp do dedykowanego quizu i fiszek stworzonych specjalnie do przerabianego materiału."
   },
   {
     question: "Jak zapisać się do grupy lub na Mentoring?",
