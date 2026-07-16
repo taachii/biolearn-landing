@@ -14,7 +14,7 @@ const PACKAGES = [
     name: "Pogotowie ratunkowe 1:1",
     price: "100",
     period: "/ lekcja",
-    description: "Idealna opcja przed sprawdzianem. Ty wybierasz temat, a my skupiamy się na rozwiązaniu bieżącego problemu.",
+    description: "Idealna opcja przed sprawdzianem czy kartkówką. Ty wybierasz temat, a ja skupiam się na rozwiązaniu bieżącego problemu.",
     features: [
       "Pełne 60 minut zajęć 1:1 online",
       "Omawiamy z góry wybrany przez Ciebie temat",
@@ -58,12 +58,12 @@ export function CennikSection({ id }: CennikSectionProps) {
   return (
     <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12">
       <div className="relative max-w-6xl mx-auto text-center">
-        <AnimateIn animation="fade-up" className="mb-16 max-w-2xl mx-auto">
+        <AnimateIn animation="fade-up" className="mb-24 max-w-2xl mx-auto">
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             Prosty i <span className="text-neon-green">przejrzysty</span> cennik
           </h2>
           <p className="text-lg text-[var(--color-text-secondary)]">
-            Wybierz model współpracy, który najlepiej odpowiada Twoim potrzebom. Bez ukrytych opłat i haczyków.
+            Wybierz model współpracy, który najlepiej odpowiada Twoim potrzebom.
           </p>
         </AnimateIn>
 
@@ -72,17 +72,17 @@ export function CennikSection({ id }: CennikSectionProps) {
             <AnimateIn key={i} animation="fade-up" delay={i * 150} className="h-full">
               <div className={cn(
                 "glass h-full flex flex-col rounded-[var(--radius-2xl)] overflow-hidden transition-all duration-500",
-                pkg.isPopular 
-                  ? "border-[#00FF66] shadow-[0_0_30px_rgba(0,255,102,0.15)] relative scale-105 z-10 md:-translate-y-4" 
+                pkg.isPopular
+                  ? "border-[#00FF66] shadow-[0_0_30px_rgba(0,255,102,0.15)] relative scale-105 z-10 md:-translate-y-4"
                   : "border-[var(--color-border-subtle)] hover:border-[#00FF66]/50"
               )}>
-                
+
                 {pkg.isPopular && (
                   <div className="absolute top-0 left-0 right-0 py-1.5 bg-[#00FF66] text-black text-xs font-bold text-center uppercase tracking-widest">
                     Najbardziej opłacalne
                   </div>
                 )}
-                
+
                 <div className={cn("p-8 sm:p-10 flex flex-col flex-grow", pkg.isPopular ? "pt-12 sm:pt-14" : "")}>
                   <h3 className="font-display text-2xl font-bold mb-2 text-[var(--color-text-primary)]">{pkg.name}</h3>
                   <p className="text-[var(--color-text-secondary)] text-sm mb-6 h-16">{pkg.description}</p>
