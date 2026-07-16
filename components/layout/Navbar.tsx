@@ -26,6 +26,12 @@ const NAV_LINKS = [
   { label: "Kontakt",       href: "#kontakt"       },
 ] as const;
 
+/* ── Helpers ────────────────────────────────────────────── */
+const getSectionTheme = (id: string) => {
+  if (id === "kim-jestem" || id === "oferta" || id === "faq") return "cyan";
+  return "green";
+};
+
 /* ── Component ──────────────────────────────────────────── */
 export function Navbar() {
   const [isScrolled,     setIsScrolled]     = useState(false);
@@ -161,7 +167,7 @@ export function Navbar() {
                       "transition-colors duration-[var(--duration-fast)]",
                       "focus-ring animated-underline",
                       isActive
-                        ? "text-[var(--color-accent)]"
+                        ? getSectionTheme(sectionId) === "cyan" ? "text-[var(--color-cyan)] drop-shadow-[0_0_8px_rgba(0,207,255,0.4)]" : "text-[var(--color-accent)] drop-shadow-[0_0_8px_rgba(0,255,102,0.4)]"
                         : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                     )}
                   >
@@ -283,12 +289,17 @@ export function Navbar() {
                       "rounded-[var(--radius-md)] text-sm font-medium",
                       "transition-all duration-[var(--duration-fast)] focus-ring",
                       isActive
-                        ? "bg-[var(--color-accent-muted)] text-[var(--color-accent)] border border-[rgba(0,230,118,0.20)]"
+                        ? getSectionTheme(sectionId) === "cyan"
+                          ? "bg-[rgba(0,207,255,0.05)] text-[var(--color-cyan)] border border-[rgba(0,207,255,0.20)]"
+                          : "bg-[var(--color-accent-muted)] text-[var(--color-accent)] border border-[rgba(0,230,118,0.20)]"
                         : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-elevated)]"
                     )}
                   >
                     {isActive && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0" />
+                      <span className={cn(
+                        "w-1.5 h-1.5 rounded-full shrink-0",
+                        getSectionTheme(sectionId) === "cyan" ? "bg-[var(--color-cyan)] shadow-[0_0_5px_var(--color-cyan)]" : "bg-[var(--color-accent)] shadow-[0_0_5px_var(--color-accent)]"
+                      )} />
                     )}
                     {label}
                   </a>
