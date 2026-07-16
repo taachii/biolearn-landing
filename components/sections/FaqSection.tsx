@@ -11,20 +11,24 @@ interface FaqSectionProps {
 
 const FAQS = [
   {
-    question: "Dla kogo są te korepetycje?",
-    answer: "Przede wszystkim dla maturzystów, którzy celują w studia medyczne i potrzebują bardzo wysokiego wyniku (80%+). Niezależnie czy zaczynasz od zera, czy chcesz tylko doszlifować umiejętności pod klucz CKE – metoda działa."
+    question: "Czy muszę kupować własne repetytoria i podręczniki?",
+    answer: "Nie. Otrzymujesz ode mnie kompletny ekosystem nauki: autorskie notatki, fiszki i wyselekcjonowane schematy. Wystarczy Ci dostęp do internetu, chęci do nauki i Discord."
   },
   {
-    question: "Czy zajęcia odbywają się online czy stacjonarnie?",
-    answer: "Wszystkie lekcje odbywają się w 100% online za pośrednictwem wybranego komunikatora (np. Google Meet, Skype, Discord) z wykorzystaniem wirtualnej tablicy."
+    question: "Jak technicznie wyglądają zajęcia online?",
+    answer: "Łączymy się na prywatnym serwerze Discord. Udostępniam ekran ze swojego iPada, na którym na żywo rozrysowuję schematy i tłumaczę zagadnienia. Ty w 100% skupiasz się na przyswajaniu wiedzy. Nie musisz nawet mieć włączonej kamerki."
   },
   {
-    question: "Ile lekcji w tygodniu polecasz?",
-    answer: "Standardowo zalecam 1-2 lekcje w tygodniu po 60 minut. To optymalny czas, aby omówić nowy materiał i na bieżąco rozwiewać wątpliwości z Twojej samodzielnej pracy."
+    question: "Jak zapisać się do grupy lub na Mentoring?",
+    answer: "Zgłoszenia na pakiety miesięczne przyjmuję mailowo lub telefonicznie (dane znajdziesz w sekcji Kontakt). Ustalimy wspólnie stały, dogodny termin, który zostanie z Tobą przypisany aż do samej matury."
   },
   {
-    question: "Czy dostanę materiały do nauki?",
-    answer: "Tak! Do każdej lekcji dostajesz autorskie notatki, schematy i zestawy wyselekcjonowanych zadań maturalnych. Nie musisz kupować dziesiątek repetytoriów."
+    question: "Co w przypadku, gdy opuszczę zajęcia w grupie?",
+    answer: "Nic nie tracisz! Każde zajęcia (za zgodą grupy) są nagrywane i lądują na naszym prywatnym kanale. Otrzymujesz również komplet autorskich notatek i fiszek z danej lekcji, więc możesz nadrobić materiał w dowolnym momencie."
+  },
+  {
+    question: "Jak wyglądają płatności i odwoływanie zajęć?",
+    answer: "Pakiety miesięczne opłacane są z góry (BLIK / Przelew). Zajęcia typu \"Pogotowie 1:1\" opłacasz przy rezerwacji terminu. Pojedyncze spotkania 1:1 możesz bezpłatnie odwołać lub przenieść maksymalnie do 24 godzin przed ich startem. Szanujmy swój czas!"
   }
 ];
 
