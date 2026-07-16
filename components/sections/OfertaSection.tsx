@@ -54,7 +54,7 @@ export function OfertaSection({ id }: OfertaSectionProps) {
             Co wchodzi w skład <span className="text-neon-cyan">współpracy?</span>
           </h2>
           <p className="text-lg text-[var(--color-text-secondary)]">
-            Nie sprzedaję Ci po prostu swojego czasu. Dołączasz do kompletnego systemu nauki – od zrozumienia mechanizmów, przez autorskie materiały, aż po bezbłędne wstrzelenie się w klucz CKE.
+            Nie sprzedaję Ci po prostu swojego czasu. Dołączasz do kompletnego systemu nauki – od zrozumienia mechanizmów, przez autorskie materiały, aż po moje stałe wsparcie między zajęciami. Po lekcji nigdy nie zostajesz z problemem sam.
           </p>
         </AnimateIn>
 
