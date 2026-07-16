@@ -44,10 +44,10 @@ export function FaqSection({ id }: FaqSectionProps) {
       <div className="relative max-w-3xl mx-auto">
         <AnimateIn animation="fade-up" className="text-center mb-16">
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-            Częste <span className="text-neon-cyan">pytania</span>
+            Zanim <span className="text-neon-cyan">zaczniesz</span>
           </h2>
           <p className="text-lg text-[var(--color-text-secondary)]">
-            Wszystko, co musisz wiedzieć przed rozpoczęciem współpracy.
+            Najważniejsze informacje o formie zajęć, materiałach i logistyce.
           </p>
         </AnimateIn>
 
