@@ -28,7 +28,7 @@ export function RezerwacjaSection({ id }: RezerwacjaSectionProps) {
           {/* Placeholder for Calendly or a simple button */}
           <div className="flex flex-col md:flex-row justify-center gap-4 w-full">
             <Button size="lg" variant="primary" className="shadow-[var(--shadow-glow-accent)] border-transparent w-full md:w-auto">
-              Zarezerwuj termin w Calendly
+              Zarezerwuj termin (Cal.com)
             </Button>
             <Button size="lg" variant="secondary" className="w-full md:w-auto" onClick={() => document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })}>
               Zadaj pytanie e-mailem
