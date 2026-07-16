@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Outfit } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -59,7 +60,9 @@ export default function RootLayout({
          * the correct class to <html> immediately, preventing
          * a flash of the wrong theme.
          */}
-        <script
+        <Script
+          id="theme-script"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');var p=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t||p)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();`,
           }}
