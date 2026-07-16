@@ -20,7 +20,7 @@ const FAQS = [
   },
   {
     question: "Jak zarezerwować miejsce w grupie lub zajęcia 1:1?",
-    answer: "Zgłoszenia na pakiety miesięczne przyjmuję mailowo lub telefonicznie (dane znajdziesz w sekcji Kontakt na dole strony). Wspólnie dobierzemy stały, dogodny termin w tygodniu, który zostanie zarezerwowany wyłącznie dla Ciebie aż do samej matury."
+    answer: "Zgłoszenia przyjmuję mailowo lub telefonicznie (dane w sekcji Kontakt na dole strony). W przypadku zajęć 1:1 wspólnie dobieramy stały termin, który rezerwuję wyłącznie dla Ciebie. W przypadku zajęć grupowych, terminy spotkań ustalamy kompromisowo po zebraniu się całej, 4-osobowej grupy."
   },
   {
     question: "Co w przypadku, gdy opuszczę zajęcia w grupie?",
