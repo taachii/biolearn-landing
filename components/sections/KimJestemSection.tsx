@@ -19,7 +19,7 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
       />
 
       <div className="relative max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
           {/* ── LEFT: Text ──────────────────────────────────── */}
           <AnimateIn animation="fade-right" className="flex flex-col gap-6">
@@ -43,8 +43,8 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
           </AnimateIn>
 
           {/* ── RIGHT: Photo ─────────────────────────────────── */}
-          <AnimateIn animation="fade-left" delay={200} className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[340px] sm:max-w-[400px]">
+          <AnimateIn animation="fade-left" delay={200} className="flex justify-center lg:justify-end h-full">
+            <div className="relative w-full max-w-[340px] sm:max-w-[400px] flex flex-col justify-between h-full">
               {/* Photo card */}
               <div
                 className="relative aspect-[3/4] w-full rounded-[var(--radius-2xl)] overflow-hidden border shadow-[var(--shadow-card)] photo-card-bg transition-colors duration-300"
@@ -77,7 +77,7 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
                   />
                   {/* Labels */}
                   <text x="0" y="72" fill="var(--color-text-muted)" fontSize="16" fontWeight="700" className="font-mono">0%</text>
-                  <text x="245" y="0" fill="var(--color-cyan)" fontSize="26" fontWeight="800" className="font-display drop-shadow-[0_0_10px_rgba(0,207,255,0.5)]">90%</text>
+                  <text x="245" y="0" fill="var(--color-accent)" fontSize="26" fontWeight="800" className="font-display drop-shadow-[0_0_10px_rgba(0,230,118,0.5)]">90%</text>
                 </svg>
                 
                 {/* X-Axis for 9 months */}
@@ -97,8 +97,8 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
                   
                   {/* End tick */}
                   <div className="relative pt-2">
-                    <div className="absolute top-0 left-1/2 w-[2px] h-2 bg-[var(--color-cyan)] -translate-x-1/2 shadow-[0_0_6px_var(--color-cyan)]" />
-                    <span className="text-[var(--color-cyan)]">Cel</span>
+                    <div className="absolute top-0 left-1/2 w-[2px] h-2 bg-[var(--color-accent)] -translate-x-1/2 shadow-[0_0_6px_var(--color-accent)]" />
+                    <span className="text-[var(--color-accent)]">Cel</span>
                   </div>
                 </div>
               </div>
