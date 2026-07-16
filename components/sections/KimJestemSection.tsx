@@ -11,12 +11,7 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
       id={id}
       className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12 overflow-hidden"
     >
-      {/* subtle ambient */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none"
-        style={{ background: "radial-gradient(circle, var(--color-accent-muted) 0%, transparent 70%)" }}
-      />
+      {/* Ambient flares removed */}
 
       <div className="relative max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">

@@ -11,14 +11,7 @@ interface RezerwacjaSectionProps {
 export function RezerwacjaSection({ id }: RezerwacjaSectionProps) {
   return (
     <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12 overflow-hidden">
-      {/* Visual background element */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] aspect-square rounded-full blur-[100px] pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, var(--color-cyan-muted) 0%, transparent 60%)",
-        }}
-      />
+      {/* Ambient flares removed */}
 
       <div className="relative max-w-3xl mx-auto text-center glass rounded-[var(--radius-2xl)] p-8 sm:p-16 border border-[var(--color-border)] shadow-[var(--shadow-card)]">
         <AnimateIn animation="zoom-in">

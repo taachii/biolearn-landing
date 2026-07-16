@@ -34,18 +34,6 @@ export function HeroSection() {
         }}
       />
 
-      {/* ── Green bloom top + cyan glow bottom-left ─────────── */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 70% 50% at 50% -5%, rgba(0,230,118,0.13) 0%, transparent 60%)" }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute bottom-0 left-0 w-[600px] h-[400px] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 0% 100%, rgba(0,207,255,0.08) 0%, transparent 60%)" }}
-      />
-
       {/* ── Fade to bottom for smooth transition ───────────────── */}
       <div 
         className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none z-10"

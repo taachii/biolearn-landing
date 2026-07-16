@@ -36,16 +36,6 @@ const TIMELINE = [
 export function HistoriaSection({ id }: HistoriaSectionProps) {
   return (
     <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12 overflow-hidden">
-      {/* Background ambient */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl aspect-square"
-        style={{
-          background: "radial-gradient(circle, var(--color-accent-muted) 0%, transparent 60%)",
-          opacity: 0.5,
-        }}
-      />
-
       <div className="relative max-w-4xl mx-auto">
         <AnimateIn animation="fade-up" className="text-center mb-16">
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
