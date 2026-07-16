@@ -19,7 +19,7 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
       />
 
       <div className="relative max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end">
 
           {/* ── LEFT: Text ──────────────────────────────────── */}
           <AnimateIn animation="fade-right" className="flex flex-col gap-6">
@@ -70,29 +70,19 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
                   <path
                     d="M 30 75 C 180 75, 230 65, 280 15"
                     fill="none"
-                    stroke="var(--color-accent)"
+                    stroke="var(--color-cyan)"
                     strokeWidth="3"
                     strokeLinecap="round"
-                    className="drop-shadow-[0_0_8px_rgba(0,230,118,0.4)]"
-                  />
-                  {/* Arrowhead */}
-                  <path
-                    d="M 268 28 L 282 17 L 268 6"
-                    fill="none"
-                    stroke="var(--color-accent)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="drop-shadow-[0_0_8px_rgba(0,230,118,0.4)]"
+                    className="drop-shadow-[0_0_8px_rgba(0,207,255,0.4)]"
                   />
                   {/* Labels */}
                   <text x="0" y="72" fill="var(--color-text-muted)" fontSize="16" fontWeight="700" className="font-mono">0%</text>
-                  <text x="245" y="0" fill="var(--color-accent)" fontSize="26" fontWeight="800" className="font-display drop-shadow-[0_0_10px_rgba(0,230,118,0.5)]">90%</text>
+                  <text x="245" y="0" fill="var(--color-cyan)" fontSize="26" fontWeight="800" className="font-display drop-shadow-[0_0_10px_rgba(0,207,255,0.5)]">90%</text>
                 </svg>
                 
                 {/* X-Axis for 9 months */}
                 <div className="relative mt-2 flex justify-between items-start text-xs font-mono font-medium text-[var(--color-text-muted)] px-3">
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[var(--color-border)] via-[var(--color-border-subtle)] to-[var(--color-accent-glow)] rounded-full" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[var(--color-border)] via-[var(--color-border-subtle)] to-[var(--color-cyan-glow)] rounded-full" />
                   
                   {/* Start tick */}
                   <div className="relative pt-2">
@@ -107,8 +97,8 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
                   
                   {/* End tick */}
                   <div className="relative pt-2">
-                    <div className="absolute top-0 left-1/2 w-[2px] h-2 bg-[var(--color-accent)] -translate-x-1/2 shadow-[0_0_6px_var(--color-accent)]" />
-                    <span className="text-[var(--color-accent)]">Cel</span>
+                    <div className="absolute top-0 left-1/2 w-[2px] h-2 bg-[var(--color-cyan)] -translate-x-1/2 shadow-[0_0_6px_var(--color-cyan)]" />
+                    <span className="text-[var(--color-cyan)]">Cel</span>
                   </div>
                 </div>
               </div>
