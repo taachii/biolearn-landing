@@ -66,7 +66,7 @@ export function CennikSection({ id }: CennikSectionProps) {
             Prosty i <span className="text-neon-green">przejrzysty</span> cennik
           </h2>
           <p className="text-lg text-[var(--color-text-secondary)]">
-            Wybierz model współpracy, który najlepiej odpowiada Twoim potrzebom. Bez ukrytych opłat i haczyków.
+            Wybierz model współpracy, który najlepiej odpowiada Twoim potrzebom.
           </p>
         </AnimateIn>
 
@@ -76,12 +76,12 @@ export function CennikSection({ id }: CennikSectionProps) {
               <div className={cn(
                 "glass h-full flex flex-col rounded-[var(--radius-2xl)] overflow-hidden transition-all duration-500",
                 pkg.isPopular
-                  ? "border-[#00FF66] shadow-[0_0_30px_rgba(0,255,102,0.15)] relative scale-105 z-10 md:-translate-y-4"
-                  : "border-[var(--color-border-subtle)] hover:border-[#00FF66]/50"
+                  ? "border-[var(--color-accent)] shadow-[var(--shadow-glow-accent)] relative scale-105 z-10 md:-translate-y-4"
+                  : "border-[var(--color-border-subtle)] hover:border-[var(--color-accent)]"
               )}>
 
                 {pkg.isPopular && (
-                  <div className="absolute top-0 left-0 right-0 py-1.5 bg-[#00FF66] text-black text-xs font-bold text-center uppercase tracking-widest">
+                  <div className="absolute top-0 left-0 right-0 py-1.5 bg-[var(--color-accent)] text-[var(--color-bg-base)] text-xs font-bold text-center uppercase tracking-widest">
                     Najbardziej opłacalne
                   </div>
                 )}
@@ -101,7 +101,7 @@ export function CennikSection({ id }: CennikSectionProps) {
                       <span className="text-sm text-[var(--color-text-muted)] ml-1 mb-2">{pkg.period}</span>
                     </div>
                     {pkg.pricePerLesson ? (
-                      <span className="text-sm text-[#00FF66] font-medium mt-1">
+                      <span className="text-sm text-[var(--color-accent)] font-medium mt-1">
                         {pkg.pricePerLesson}
                       </span>
                     ) : (
@@ -112,7 +112,7 @@ export function CennikSection({ id }: CennikSectionProps) {
                   <ul className="flex flex-col gap-4 mb-10 flex-grow">
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <Check size={18} className="text-[#00FF66] shrink-0 mt-0.5" />
+                        <Check size={18} className="text-[var(--color-accent)] shrink-0 mt-0.5" />
                         <span className="text-[var(--color-text-secondary)] text-sm">{feature}</span>
                       </li>
                     ))}
@@ -121,7 +121,7 @@ export function CennikSection({ id }: CennikSectionProps) {
                   <Button
                     variant={pkg.isPopular ? "primary" : "secondary"}
                     size="lg"
-                    className={cn("w-full mt-auto", pkg.isPopular ? "bg-[#00FF66] text-black hover:bg-[#00cc52] shadow-[0_0_20px_rgba(0,255,102,0.3)] border-transparent" : "")}
+                    className={cn("w-full mt-auto", pkg.isPopular ? "bg-[var(--color-accent)] text-[var(--color-bg-base)] hover:bg-[var(--color-accent-dim)] shadow-[var(--shadow-glow-accent)] border-transparent" : "")}
                     onClick={() => document.getElementById("rezerwacja")?.scrollIntoView({ behavior: "smooth" })}
                   >
                     {pkg.buttonText}
