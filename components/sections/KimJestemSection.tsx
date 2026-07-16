@@ -18,8 +18,8 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
 
           {/* ── LEFT: Text ──────────────────────────────────── */}
           <AnimateIn animation="fade-right" className="flex flex-col gap-6">
-            <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight">
-              Kim <span className="text-neon-green">jestem?</span>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-8">
+              Kim <span className="text-neon-cyan">jestem?</span>
             </h2>
 
             <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed mb-5">
@@ -27,7 +27,7 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
             </p>
             <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed mb-5">
               W lipcu 2025 zdecydowałem, że praca informatyka nie jest czymś, w czym siebie widzę, dlatego postanowiłem spróbować moich sił w medycynie, do której od dłuższego czasu mnie ciągnęło.
-              Miesiąc później wystartowałem z przygotowaniami <strong className="text-[var(--color-text-primary)] font-semibold">od absolutnego zera</strong>. Pomimo tego, że naukę biologii łączyłem z dyżurami na basenie jako ratownik i pisaniem pracy inżynierskiej, zaledwie po <strong className="text-neon-green font-bold">9 miesiącach</strong> przygotowań, w maju 2026r. napisałem arkusz maturalny z biologii rozszerzonej na <strong className="text-neon-green font-bold text-xl">90%</strong>, co otworzyło mi drzwi na <strong className="text-[var(--color-text-primary)] font-semibold">studia lekarskie</strong>.
+              Miesiąc później wystartowałem z przygotowaniami <strong className="text-[var(--color-text-primary)] font-semibold">od absolutnego zera</strong>. Pomimo tego, że naukę biologii łączyłem z dyżurami na basenie jako ratownik i pisaniem pracy inżynierskiej, zaledwie po <strong className="text-neon-cyan font-bold">9 miesiącach</strong> przygotowań, w maju 2026r. napisałem arkusz maturalny z biologii rozszerzonej na <strong className="text-neon-cyan font-bold text-xl">90%</strong>, co otworzyło mi drzwi na <strong className="text-[var(--color-text-primary)] font-semibold">studia lekarskie</strong>.
             </p>
             <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed mb-5">
               Moim celem jest pokazanie Ci, że biologia wcale nie musi być trudna. W przeszłości udzielałem korepetycji z matematyki i pomogłem wielu osobom osiągnąć satysfakcjonujące wyniki, więc doskonale wiem, jak tłumaczyć nawet najbardziej skomplikowane tematy <strong className="text-[var(--color-text-primary)] font-semibold">w logiczny i sensowny sposób w luźnej atmosferze</strong>.
@@ -53,8 +53,8 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
                   sizes="(max-width: 640px) 340px, (max-width: 1024px) 400px, 400px"
                 />
                 {/* Corner accents */}
-                <span aria-hidden="true" className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-[var(--color-accent)] rounded-tl-lg opacity-80 z-10" />
-                <span aria-hidden="true" className="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-[var(--color-accent)] rounded-tr-lg opacity-80 z-10" />
+                <span aria-hidden="true" className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-[var(--color-cyan)] rounded-tl-lg opacity-80 z-10" />
+                <span aria-hidden="true" className="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-[var(--color-cyan)] rounded-tr-lg opacity-80 z-10" />
               </div>
 
               {/* Progress illustration under the photo */}
@@ -72,7 +72,9 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
                   />
                   {/* Labels */}
                   <text x="0" y="72" fill="var(--color-text-muted)" fontSize="16" fontWeight="700" className="font-mono">0%</text>
-                  <text x="245" y="0" fill="var(--color-accent)" fontSize="26" fontWeight="800" className="font-display drop-shadow-[0_0_10px_rgba(0,230,118,0.5)]">90%</text>
+                  <text x="245" y="0" fill="var(--color-cyan)" fontSize="26" fontWeight="800" className="font-display drop-shadow-[0_0_10px_rgba(0,207,255,0.5)]">
+                    90%
+                  </text>
                 </svg>
                 
                 {/* X-Axis for 9 months */}
@@ -92,8 +94,8 @@ export function KimJestemSection({ id }: KimJestemSectionProps) {
                   
                   {/* End tick */}
                   <div className="relative pt-2">
-                    <div className="absolute top-0 left-1/2 w-[2px] h-2 bg-[var(--color-accent)] -translate-x-1/2 shadow-[0_0_6px_var(--color-accent)]" />
-                    <span className="text-[var(--color-accent)]">Cel</span>
+                    <div className="absolute top-0 left-1/2 w-[2px] h-2 bg-[var(--color-cyan)] -translate-x-1/2 shadow-[0_0_6px_var(--color-cyan)]" />
+                    <span className="text-[var(--color-cyan)] font-bold">Cel</span>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { CheckCircle2, MessageCircle, FileText, BarChart } from "lucide-react";
+import { CheckCircle2, MessageCircle, FileText, BarChart, Key } from "lucide-react";
 
 interface OfertaSectionProps {
   id?: string;
@@ -11,6 +11,11 @@ const OFERTA = [
     title: "Indywidualne lekcje 1:1 online",
     description: "Pełne 60 minut skupione w 100% na Twoich brakach. Tłumaczę do skutku, używając metafor i schematów.",
     icon: CheckCircle2,
+  },
+  {
+    title: "Rozbijanie klucza CKE",
+    description: "Analizujemy schematy oceniania na czynniki pierwsze. Nauczysz się pisać odpowiedzi, które w 100% wpasowują się w klucz egzaminatora.",
+    icon: Key,
   },
   {
     title: "Materiały z laboratorium",
@@ -40,7 +45,7 @@ export function OfertaSection({ id }: OfertaSectionProps) {
             <AnimateIn animation="fade-right">
               <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-6">
                 Co wchodzi w skład <br />
-                <span className="text-neon-green">współpracy?</span>
+                <span className="text-neon-cyan">współpracy?</span>
               </h2>
               <p className="text-lg text-[var(--color-text-secondary)] mb-8">
                 Moim celem nie jest odklepanie godziny i wzięcie pieniędzy. Zależy mi na tym,
@@ -52,7 +57,7 @@ export function OfertaSection({ id }: OfertaSectionProps) {
                   <AnimateIn key={i} animation="fade-right" delay={i * 100 + 200}>
                     <li className="flex gap-4 group">
                       <div className="shrink-0 mt-1">
-                        <item.icon size={24} className="text-[var(--color-accent)] group-hover:scale-110 transition-transform" />
+                        <item.icon size={24} className="text-[var(--color-cyan)] group-hover:scale-110 transition-transform" />
                       </div>
                       <div>
                         <h4 className="font-bold text-[var(--color-text-primary)] text-lg mb-1">{item.title}</h4>
@@ -67,10 +72,10 @@ export function OfertaSection({ id }: OfertaSectionProps) {
 
           {/* Right: Visual / Card */}
           <AnimateIn animation="fade-left" delay={300} className="relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)] to-[var(--color-cyan)] rounded-[var(--radius-2xl)] blur-2xl opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-cyan)] to-[var(--color-accent)] rounded-[var(--radius-2xl)] blur-2xl opacity-20" />
             <div className="relative glass rounded-[var(--radius-2xl)] p-8 sm:p-10 border border-[var(--color-border)] shadow-[var(--shadow-card)]">
-              <div className="w-16 h-16 rounded-full bg-[var(--color-accent-muted)] flex items-center justify-center mb-6">
-                <span className="text-3xl font-bold text-[var(--color-accent)]">🔬</span>
+              <div className="w-16 h-16 rounded-full bg-[var(--color-cyan-muted)] flex items-center justify-center mb-6">
+                <span className="text-3xl font-bold text-[var(--color-cyan)]">🔬</span>
               </div>
               <h3 className="text-2xl font-display font-bold mb-4">Pełen ekosystem nauki</h3>
               <p className="text-[var(--color-text-secondary)] mb-6">

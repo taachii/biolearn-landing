@@ -40,7 +40,7 @@ export function FaqSection({ id }: FaqSectionProps) {
       <div className="relative max-w-3xl mx-auto">
         <AnimateIn animation="fade-up" className="text-center mb-16">
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-            Częste <span className="text-neon-green">pytania</span>
+            Częste <span className="text-neon-cyan">pytania</span>
           </h2>
           <p className="text-lg text-[var(--color-text-secondary)]">
             Wszystko, co musisz wiedzieć przed rozpoczęciem współpracy.
@@ -55,7 +55,7 @@ export function FaqSection({ id }: FaqSectionProps) {
               <AnimateIn key={i} animation="fade-up" delay={i * 100}>
                 <div className={cn(
                   "glass rounded-[var(--radius-lg)] overflow-hidden transition-all duration-[var(--duration-normal)]",
-                  isOpen ? "border-[var(--color-accent)] shadow-[var(--shadow-glow-accent)]" : "hover:border-[var(--color-border-subtle)]"
+                  isOpen ? "border-[var(--color-cyan)] shadow-[var(--shadow-glow-cyan)]" : "hover:border-[var(--color-border-subtle)]"
                 )}>
                   <button
                     type="button"
@@ -69,7 +69,7 @@ export function FaqSection({ id }: FaqSectionProps) {
                     <ChevronDown
                       className={cn(
                         "shrink-0 text-[var(--color-text-muted)] transition-transform duration-[var(--duration-normal)]",
-                        isOpen && "rotate-180 text-[var(--color-accent)]"
+                        isOpen && "rotate-180 text-[var(--color-cyan)]"
                       )}
                       size={20}
                     />

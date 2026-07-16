@@ -4,7 +4,6 @@ import { SectionDivider }  from "@/components/ui/SectionDivider";
 
 import { KimJestemSection }  from "@/components/sections/KimJestemSection";
 import { HistoriaSection }   from "@/components/sections/HistoriaSection";
-import { MetodaSection }     from "@/components/sections/MetodaSection";
 import { OfertaSection }     from "@/components/sections/OfertaSection";
 import { CennikSection }     from "@/components/sections/CennikSection";
 import { FaqSection }        from "@/components/sections/FaqSection";
@@ -29,9 +28,6 @@ export default function HomePage() {
         <HistoriaSection   id="historia"  />
 
         <SectionDivider variant="curve" />
-        <MetodaSection     id="metoda"    />
-
-        <SectionDivider variant="wave" flip />
         <OfertaSection     id="oferta"    />
 
         <SectionDivider variant="diagonal" />

@@ -15,7 +15,7 @@ export function CennikSection({ id }: CennikSectionProps) {
       <div className="relative max-w-4xl mx-auto text-center">
         <AnimateIn animation="fade-up" className="mb-12">
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-            Prosty i <span className="text-neon-cyan">przejrzysty</span> cennik
+            Prosty i <span className="text-neon-green">przejrzysty</span> cennik
           </h2>
           <p className="text-lg text-[var(--color-text-secondary)]">
             Żadnych ukrytych opłat, kruczków i długoterminowych umów.

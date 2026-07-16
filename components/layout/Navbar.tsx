@@ -20,7 +20,6 @@ import { cn } from "@/lib/utils";
 const NAV_LINKS = [
   { label: "Kim jestem?",    href: "#kim-jestem"   },
   { label: "Moja historia", href: "#historia"      },
-  { label: "Metoda",        href: "#metoda"        },
   { label: "Oferta",        href: "#oferta"        },
   { label: "Cennik",        href: "#cennik"        },
   { label: "FAQ",           href: "#faq"           },

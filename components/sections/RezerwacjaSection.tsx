@@ -15,11 +15,11 @@ export function RezerwacjaSection({ id }: RezerwacjaSectionProps) {
 
       <div className="relative max-w-3xl mx-auto text-center glass rounded-[var(--radius-2xl)] p-8 sm:p-16 border border-[var(--color-border)] shadow-[var(--shadow-card)]">
         <AnimateIn animation="zoom-in">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-cyan)] mb-6 shadow-[var(--shadow-glow-cyan)]">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-[var(--color-accent)] mb-6 shadow-[var(--shadow-glow-accent)]">
             <Calendar size={32} />
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-            Zrób <span className="text-neon-cyan">pierwszy krok</span>
+            Zrób <span className="text-neon-green">pierwszy krok</span>
           </h2>
           <p className="text-lg text-[var(--color-text-secondary)] mb-8 max-w-xl mx-auto">
             Zarezerwuj darmową 15-minutową rozmowę zapoznawczą. Zobaczymy na jakim jesteś etapie, omówimy Twoje cele i sprawdzimy, czy moja metoda jest dla Ciebie.
@@ -27,7 +27,7 @@ export function RezerwacjaSection({ id }: RezerwacjaSectionProps) {
           
           {/* Placeholder for Calendly or a simple button */}
           <div className="flex flex-col md:flex-row justify-center gap-4 w-full">
-            <Button size="lg" variant="primary" className="shadow-[var(--shadow-glow-cyan)] border-transparent w-full md:w-auto">
+            <Button size="lg" variant="primary" className="shadow-[var(--shadow-glow-accent)] border-transparent w-full md:w-auto">
               Zarezerwuj termin w Calendly
             </Button>
             <Button size="lg" variant="secondary" className="w-full md:w-auto" onClick={() => document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })}>
