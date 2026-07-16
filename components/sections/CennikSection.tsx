@@ -10,7 +10,7 @@ interface CennikSectionProps {
 const PACKAGES = [
   {
     name: "Pogotowie ratunkowe 1:1",
-    price: "80",
+    price: "100",
     period: "/ lekcja",
     description: "Idealna opcja przed sprawdzianem. Ty wybierasz temat, a my skupiamy się na rozwiązaniu bieżącego problemu.",
     features: [
@@ -24,7 +24,7 @@ const PACKAGES = [
   },
   {
     name: "Grupa Maturalna 2027",
-    price: "290",
+    price: "200",
     period: "/ miesiąc",
     description: "Kameralna grupa (3-4 osoby). Przerabiamy materiał od A do Z według mojego rygorystycznego harmonogramu.",
     features: [
@@ -38,7 +38,7 @@ const PACKAGES = [
   },
   {
     name: "Prowadzenie Indywidualne",
-    price: "450",
+    price: "320",
     period: "/ miesiąc",
     description: "Ekskluzywne prowadzenie 1:1 do samej matury. Ja narzucam tempo i układam plan, a Ty po prostu robisz postępy.",
     features: [
