@@ -24,12 +24,12 @@ export function RezerwacjaSection({ id }: RezerwacjaSectionProps) {
           <p className="text-lg text-[var(--color-text-secondary)] mb-10 max-w-xl mx-auto">
             Wybierz formę zajęć, która Cię interesuje, i zrób pierwszy krok do maturalnego sukcesu. Ilość miejsc w grupach jest ograniczona.
           </p>
-          
+
           <div className="flex flex-col gap-4 max-w-2xl mx-auto w-full text-left">
             {/* Opcja 1: Grupa */}
-            <div className="bg-[var(--color-bg-base)] rounded-[var(--radius-lg)] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-[var(--color-border)] hover:border-[#00FF66]/50 transition-colors relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-[var(--color-accent-muted)] text-[var(--color-accent)] text-xs font-bold px-3 py-1 rounded-bl-[var(--radius-md)] border-b border-l border-[rgba(0,255,102,0.2)]">
-                Zajęte miejsca: 0/4
+            <div className="bg-[var(--color-bg-base)] rounded-[var(--radius-lg)] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-[var(--color-accent-muted)] text-[var(--color-accent)] text-xs font-bold px-3 py-1 rounded-bl-[var(--radius-md)] border-b border-l border-[var(--color-accent-glow)]">
+                Wolne miejsca!
               </div>
               <div className="pt-3 sm:pt-0 pr-0 sm:pr-32">
                 <h3 className="font-bold text-[var(--color-text-primary)] text-lg">Grupa Maturalna 2027</h3>
@@ -38,9 +38,9 @@ export function RezerwacjaSection({ id }: RezerwacjaSectionProps) {
             </div>
 
             {/* Opcja 2: 1:1 */}
-            <div className="bg-[var(--color-bg-base)] rounded-[var(--radius-lg)] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-[var(--color-border)] hover:border-[#00FF66]/50 transition-colors relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-[var(--color-bg-elevated)] text-[var(--color-text-muted)] text-xs font-bold px-3 py-1 rounded-bl-[var(--radius-md)] border-b border-l border-[var(--color-border-subtle)]">
-                Wolne terminy
+            <div className="bg-[var(--color-bg-base)] rounded-[var(--radius-lg)] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-[var(--color-accent-muted)] text-[var(--color-accent)] text-xs font-bold px-3 py-1 rounded-bl-[var(--radius-md)] border-b border-l border-[var(--color-accent-glow)]">
+                Wolne terminy!
               </div>
               <div className="pt-3 sm:pt-0 pr-0 sm:pr-32">
                 <h3 className="font-bold text-[var(--color-text-primary)] text-lg">Matura 2027 (1:1)</h3>
@@ -49,7 +49,7 @@ export function RezerwacjaSection({ id }: RezerwacjaSectionProps) {
             </div>
 
             {/* Opcja 3: Pogotowie */}
-            <div className="bg-[var(--color-bg-base)] rounded-[var(--radius-lg)] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border border-[var(--color-border)] hover:border-[#00FF66]/50 transition-colors mt-2">
+            <div className="bg-[var(--color-bg-base)] rounded-[var(--radius-lg)] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors mt-2">
               <div>
                 <h3 className="font-bold text-[var(--color-text-primary)] text-lg">Pogotowie ratunkowe 1:1</h3>
                 <p className="text-sm text-[var(--color-text-secondary)] mt-1">Potrzebujesz jednorazowej pomocy przed sprawdzianem? Wybierz wolny termin wprost z kalendarza.</p>
