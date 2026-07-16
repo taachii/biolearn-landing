@@ -9,7 +9,7 @@ interface OfertaSectionProps {
 const OFERTA = [
   {
     title: "Interaktywne lekcje online",
-    description: "Pełne 60 minut zajęć na Discordzie. Tłumaczę do skutku, udostępniając mój ekran z iPada i rysując schematy na żywo, aż zapali się 'żarówka'.",
+    description: "Zajęcia prowadzę za pomocą Discorda, gdzie udostępniam ekran z iPada. Tłumaczę dopóki nie zrozumiesz i angażuję Cię w proces, żeby lekcje nie były zwykłym, pasywnym słuchaniem.",
     icon: MonitorPlay,
     cols: "lg:col-span-2"
   },
