@@ -1,6 +1,10 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { BookOpen, BrainCircuit, Target } from "lucide-react";
+import { LineChart, BrainCircuit, Waypoints } from "lucide-react";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 interface HistoriaSectionProps {
   id?: string;
@@ -13,7 +17,7 @@ const TIMELINE = [
     title: "Optymalizacja nauki",
     description:
       "Od początku wiedziałem, że ilość materiału do opanowania z tego przedmiotu jest wręcz kolosalna, dlatego byłem świadomy tego, że do nauki muszę podejść z głową i odpowiednią strategią. Wraz z upływem kolejnych tygodni, zacząłem zauważać jakie metody nauki się sprawdzają, a które tylko niepotrzebnie marnują mój cenny czas, dzięki czemu byłem w stanie cały czas optymalizować sposób przygotowań.",
-    icon: BookOpen,
+    icon: LineChart,
   },
   {
     id: "proces",
@@ -29,9 +33,72 @@ const TIMELINE = [
     title: "Interakcje, nie tylko nazwy",
     description:
       "Nie twierdzę, że w biologii nie ma pamięciówki, bo owszem - jest. Nie da się przeskoczyć nauki nazewnictwa poszczególnych struktur u roślin, czy hormonów u człowieka, ale jest ogromna różnica między wiedzą, że coś się jakoś nazywa, a wiedzą w jaki sposób \"to coś\" wchodzi w interakcję z innymi \"cosiami\" :D",
-    icon: Target,
+    icon: Waypoints,
   },
 ];
+
+function TimelineItem({ item, index }: { item: typeof TIMELINE[0], index: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-35% 0px -35% 0px" });
+  const isEven = index % 2 === 0;
+  const Icon = item.icon;
+
+  return (
+    <li ref={ref} className="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-12 group">
+      
+      {/* Left side (Desktop) */}
+      <div className={cn(
+        "hidden sm:block flex-1 text-right",
+        !isEven && "sm:order-3 sm:text-left"
+      )}>
+        <AnimateIn animation={isEven ? "fade-right" : "fade-left"} delay={index * 150}>
+          <span className={cn(
+            "font-mono font-semibold tracking-widest uppercase text-sm transition-colors duration-500",
+            isInView ? "text-[var(--color-accent)] drop-shadow-[0_0_8px_var(--color-accent)]" : "text-[var(--color-text-muted)] opacity-50"
+          )}>
+            {item.year}
+          </span>
+        </AnimateIn>
+      </div>
+
+      {/* Node / Icon */}
+      <div className={cn(
+        "relative z-10 flex items-center justify-center w-14 h-14 rounded-full shrink-0",
+        "glass border-2 transition-all duration-500",
+        isInView 
+          ? "border-[var(--color-accent)] text-[var(--color-accent)] shadow-[var(--shadow-glow-accent)] scale-110" 
+          : "border-[var(--color-border)] text-[var(--color-text-muted)] scale-100",
+        !isEven && "sm:order-2"
+      )}>
+        <Icon size={24} className="transition-transform duration-500" />
+      </div>
+
+      {/* Right side (Mobile + Desktop) */}
+      <div className={cn(
+        "flex-1 w-full pt-1 sm:pt-0",
+        !isEven && "sm:order-1 sm:text-right"
+      )}>
+        <AnimateIn animation={isEven ? "fade-left" : "fade-right"} delay={index * 150}>
+          <span className={cn(
+            "sm:hidden font-mono font-semibold tracking-widest uppercase text-xs block mb-2 transition-colors duration-500",
+            isInView ? "text-[var(--color-accent)] drop-shadow-[0_0_8px_var(--color-accent)]" : "text-[var(--color-text-muted)] opacity-50"
+          )}>
+            {item.year}
+          </span>
+          <div className={cn(
+            "glass rounded-[var(--radius-xl)] p-6 transition-all duration-500",
+            isInView ? "border-[var(--color-border-subtle)] bg-[rgba(255,255,255,0.03)] shadow-lg" : "border-transparent opacity-80"
+          )}>
+            <h3 className={cn("font-display text-xl font-bold mb-3 transition-colors duration-500", isInView ? "text-[var(--color-text-primary)]" : "text-[var(--color-text-secondary)]")}>{item.title}</h3>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed text-sm">
+              {item.description}
+            </p>
+          </div>
+        </AnimateIn>
+      </div>
+    </li>
+  );
+}
 
 export function HistoriaSection({ id }: HistoriaSectionProps) {
   return (
@@ -55,56 +122,9 @@ export function HistoriaSection({ id }: HistoriaSectionProps) {
           />
 
           <ul className="flex flex-col gap-12 sm:gap-16">
-            {TIMELINE.map((item, index) => {
-              const isEven = index % 2 === 0;
-              const Icon = item.icon;
-
-              return (
-                <li key={item.id} className="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-12 group">
-                  
-                  {/* Left side (Desktop) */}
-                  <div className={cn(
-                    "hidden sm:block flex-1 text-right",
-                    !isEven && "sm:order-3 sm:text-left"
-                  )}>
-                    <AnimateIn animation={isEven ? "fade-right" : "fade-left"} delay={index * 150}>
-                      <span className="font-mono text-[var(--color-accent)] font-semibold tracking-widest uppercase text-sm">
-                        {item.year}
-                      </span>
-                    </AnimateIn>
-                  </div>
-
-                  {/* Node / Icon */}
-                  <div className={cn(
-                    "relative z-10 flex items-center justify-center w-14 h-14 rounded-full shrink-0",
-                    "glass border-2 border-[var(--color-border)] text-[var(--color-text-muted)]",
-                    "transition-colors duration-[var(--duration-normal)]",
-                    "group-hover:border-[var(--color-accent)] group-hover:text-[var(--color-accent)] group-hover:shadow-[var(--shadow-glow-accent)]",
-                    !isEven && "sm:order-2"
-                  )}>
-                    <Icon size={24} />
-                  </div>
-
-                  {/* Right side (Mobile + Desktop) */}
-                  <div className={cn(
-                    "flex-1 w-full pt-1 sm:pt-0",
-                    !isEven && "sm:order-1 sm:text-right"
-                  )}>
-                    <AnimateIn animation={isEven ? "fade-left" : "fade-right"} delay={index * 150}>
-                      <span className="sm:hidden font-mono text-[var(--color-accent)] font-semibold tracking-widest uppercase text-xs block mb-2">
-                        {item.year}
-                      </span>
-                      <div className="glass rounded-[var(--radius-xl)] p-6 hover:border-[var(--color-border-subtle)] transition-colors">
-                        <h3 className="font-display text-xl font-bold mb-3">{item.title}</h3>
-                        <p className="text-[var(--color-text-secondary)] leading-relaxed text-sm">
-                          {item.description}
-                        </p>
-                      </div>
-                    </AnimateIn>
-                  </div>
-                </li>
-              );
-            })}
+            {TIMELINE.map((item, index) => (
+              <TimelineItem key={item.id} item={item} index={index} />
+            ))}
           </ul>
         </div>
       </div>
