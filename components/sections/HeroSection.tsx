@@ -78,7 +78,7 @@ export function HeroSection() {
 
         {/* CTAs */}
         <AnimateIn animation="fade-up" delay={280}>
-          <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto justify-center">
+          <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto justify-center mb-10">
             <Button
               id="hero-cta-primary"
               size="lg"
@@ -102,6 +102,24 @@ export function HeroSection() {
             >
               Kim jestem?
             </Button>
+          </div>
+        </AnimateIn>
+
+        {/* Feature / Format Badges */}
+        <AnimateIn animation="fade-up" delay={400}>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-sm text-[var(--color-text-primary)] font-medium">
+            <div className="flex items-center gap-2 glass px-4 py-2 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-card)]">
+              <span className="text-[var(--color-accent)] font-bold text-lg leading-none mt-[-2px]">•</span>
+              <span>100% Online na Discordzie</span>
+            </div>
+            <div className="flex items-center gap-2 glass px-4 py-2 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-card)]">
+              <span className="text-[var(--color-accent)] font-bold text-lg leading-none mt-[-2px]">•</span>
+              <span>Wirtualna tablica (iPad)</span>
+            </div>
+            <div className="flex items-center gap-2 glass px-4 py-2 rounded-[var(--radius-full)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-card)]">
+              <span className="text-[var(--color-accent)] font-bold text-lg leading-none mt-[-2px]">•</span>
+              <span>Indywidualnie 1:1</span>
+            </div>
           </div>
         </AnimateIn>
       </div>
