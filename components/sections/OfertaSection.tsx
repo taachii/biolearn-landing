@@ -27,7 +27,7 @@ const OFERTA = [
   },
   {
     title: "Autorskie notatki",
-    description: "Zapomnij o dziesiątkach repetytoriów. Otrzymujesz moje autorskie notatki i schematy, wyselekcjonowane prosto pod wymagania maturalne.",
+    description: "Otrzymujesz moje autorskie notatki i schematy, wyselekcjonowane prosto pod wymagania maturalne.",
     icon: FileText,
     cols: "lg:col-span-2"
   },
