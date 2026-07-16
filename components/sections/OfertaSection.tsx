@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { MonitorPlay, Key, Video, BrainCircuit, MessageCircle, FileText } from "lucide-react";
+import { MonitorPlay, Key, Video, Gamepad2, MessageCircle, FileText } from "lucide-react";
 
 interface OfertaSectionProps {
   id?: string;
@@ -33,12 +33,12 @@ const OFERTA = [
   },
   {
     title: "Quizy i fiszki po lekcji",
-    description: "Po każdych zajęciach otrzymujesz wyselekcjonowany quiz sprawdzający wiedzę oraz interaktywne fiszki do szybkich powtórek w drodze do szkoły.",
-    icon: BrainCircuit,
+    description: "Po każdych zajęciach otrzymujesz wyselekcjonowany quiz sprawdzający wiedzę oraz interaktywne fiszki do błyskawicznych powtórek.",
+    icon: Gamepad2,
     cols: "lg:col-span-2"
   },
   {
-    title: "Ciągły kontakt na Discord",
+    title: "Kontakt (Discord / Messenger)",
     description: "Zaciąłeś się przy trudnym zadaniu? Piszesz do mnie i rozbrajamy problem od ręki, bez czekania na kolejną lekcję.",
     icon: MessageCircle,
     cols: "lg:col-span-2"
