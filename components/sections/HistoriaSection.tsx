@@ -88,11 +88,11 @@ function TimelineItem({ item, index }: { item: typeof TIMELINE[0], index: number
             {item.year}
           </span>
           <div className={cn(
-            "glass rounded-[var(--radius-xl)] p-6 transition-all duration-500",
+            "glass rounded-[var(--radius-xl)] px-6 py-4 sm:py-5 transition-all duration-500",
             isInView ? "border-[var(--color-border-subtle)] bg-[rgba(255,255,255,0.03)] shadow-lg" : "border-transparent opacity-80"
           )}>
-            <h3 className={cn("font-display text-xl font-bold mb-3 transition-colors duration-500", isInView ? "text-[var(--color-text-primary)]" : "text-[var(--color-text-secondary)]")}>{item.title}</h3>
-            <p className="text-[var(--color-text-secondary)] leading-relaxed text-sm">
+            <h3 className={cn("font-display text-xl font-bold mb-2 transition-colors duration-500", isInView ? "text-[var(--color-text-primary)]" : "text-[var(--color-text-secondary)]")}>{item.title}</h3>
+            <p className="text-[var(--color-text-secondary)] leading-normal text-sm">
               {item.description}
             </p>
           </div>
@@ -105,7 +105,7 @@ function TimelineItem({ item, index }: { item: typeof TIMELINE[0], index: number
 export function HistoriaSection({ id }: HistoriaSectionProps) {
   return (
     <section id={id} className="relative py-24 sm:py-32 px-8 sm:px-10 lg:px-12 overflow-hidden">
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-5xl mx-auto">
         <AnimateIn animation="fade-up" className="text-center mb-16">
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             Jak to <span className="text-neon-green">osiągnąłem?</span>
