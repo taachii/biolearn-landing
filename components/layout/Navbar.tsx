@@ -39,7 +39,12 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       // Clear active section when near the very top (hero area)
-      if (window.scrollY < 100) setActiveSection("");
+      if (window.scrollY < 100) {
+        setActiveSection("");
+      } else if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+        // If we hit the bottom of the page, forcefully set the last section as active
+        setActiveSection("kontakt");
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
