@@ -166,6 +166,7 @@ export function Navbar() {
                       "relative px-4 py-2 rounded-[var(--radius-md)] text-sm font-medium",
                       "transition-colors duration-[var(--duration-fast)]",
                       "focus-ring animated-underline",
+                      getSectionTheme(sectionId) === "cyan" ? "after:!bg-[var(--color-cyan)]" : "",
                       isActive
                         ? getSectionTheme(sectionId) === "cyan" ? "text-neon-cyan" : "text-neon-green"
                         : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
