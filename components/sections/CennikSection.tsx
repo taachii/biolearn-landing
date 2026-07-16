@@ -15,7 +15,7 @@ const PACKAGES = [
     price: "100",
     period: "/ lekcja",
     pricePerLesson: null,
-    description: "Idealna opcja przed sprawdzianem. Ty wybierasz temat, a my skupiamy się na rozwiązaniu bieżącego problemu.",
+    description: "Idealna opcja przed sprawdzianem czy kartkówką. Ty wybierasz temat, a ja skupiam się na wyjaśnieniu bieżącego problemu.",
     features: [
       "Pełne 60 minut zajęć 1:1 online",
       "Omawiamy z góry wybrany przez Ciebie temat",
@@ -29,7 +29,7 @@ const PACKAGES = [
     name: "Grupa Maturalna 2027",
     price: "200",
     period: "/ miesiąc",
-    pricePerLesson: "(wychodzi 50 PLN / lekcję)",
+    pricePerLesson: "(50 PLN / lekcja)",
     description: "Kameralna grupa (3-4 osoby). Przerabiamy materiał od A do Z według mojego rygorystycznego harmonogramu.",
     features: [
       "4 spotkania w miesiącu o stałej porze",
@@ -44,7 +44,7 @@ const PACKAGES = [
     name: "Prowadzenie Indywidualne",
     price: "320",
     period: "/ miesiąc",
-    pricePerLesson: "(wychodzi 80 PLN / lekcję)",
+    pricePerLesson: "(80 PLN / lekcja)",
     description: "Ekskluzywne prowadzenie 1:1 do samej matury. Ja narzucam tempo i układam plan, a Ty po prostu robisz postępy.",
     features: [
       "4 spotkania 1:1 w miesiącu o stałej porze",
@@ -88,7 +88,7 @@ export function CennikSection({ id }: CennikSectionProps) {
 
                 <div className={cn("p-8 sm:p-10 flex flex-col flex-grow", pkg.isPopular ? "pt-12 sm:pt-14" : "")}>
                   <h3 className="font-display text-2xl font-bold mb-2 text-[var(--color-text-primary)]">{pkg.name}</h3>
-                  <p className="text-[var(--color-text-secondary)] text-sm mb-6 h-16">{pkg.description}</p>
+                  <p className="text-[var(--color-text-secondary)] text-sm mb-6 min-h-[5rem]">{pkg.description}</p>
 
                   <div className="flex flex-col mb-8">
                     <div className="flex items-end gap-1">
